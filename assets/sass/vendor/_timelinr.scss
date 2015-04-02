@@ -1,0 +1,272 @@
+
+// timelinr
+
+  #timeline {
+    // width: 760px;
+    height: 170px;
+    overflow: hidden;
+    margin: -173px auto 0 auto;
+    position: relative;
+    border:3px solid #fff;
+    border-bottom:none;
+    background: url('../images/dot--line.png') center 122px no-repeat;
+      center{
+        position:relative;
+        z-index: 1;
+          h2{
+            display: inline-block;
+            font-family: 'alrightsans-medium';
+            font-size: 20px;
+            font-weight:normal;
+            // line-height: 40px;
+            margin: 30px auto;
+          }
+      }      
+  }
+    #dates {
+      position:relative;
+      z-index: 2;
+      // width: 800px;
+      height: 60px;
+      // overflow: hidden;
+      padding:5px 0 0 0;
+      margin: 0px 0 0 0;
+    }
+      #dates li {
+        list-style: none;
+        float: left;
+        width: 100px;
+        height: 50px;
+        font-size: 24px;
+        text-align: center;
+        background: url('../images/biggerdot.png') center bottom no-repeat;
+      }
+        #dates a {
+          display: block;
+          font-size: 18px;
+          line-height: 38px;
+          font-weight: 600;
+          padding-bottom: 10px;
+          color:#616879;
+          @include delay(.4s all);
+        }
+        #dates .selected {
+          font-size: 48px;
+          line-height: 12px;          
+          color:#fff;
+          margin:0 0 0 -5px;
+        }
+    
+    .issues__wrapper{
+      display: block;
+      // width:760px;
+      margin:0 auto !important;
+    }
+    #issues {
+      display: block !important;
+      position: relative;
+      // width: 100%;
+      // width: 760px !important;
+      height: auto !important;
+      padding:0 !important;
+      // height: 280px;
+      overflow: visible;
+      // overflow-y: hidden;
+      // margin:40px 0 0 0;
+      // padding-left: 0%;
+      z-index: 1;
+      white-space: nowrap;
+    } 
+      #issues li {
+        // width: 800px;
+        // height: 280px;
+        // width:100vw;
+        // width:760px !important;
+        display: inline-block !important;
+        list-style: none;
+        float: none !important;
+        margin:0 -5px 0 0 !important;
+        padding:0 !important;
+        white-space: nowrap;
+        opacity: 0;
+        // margin:0 270px 0 0;
+        /* bring your own prefixes */
+        // @include transform (translate(70%, 0%));
+        &:first-child{
+          // @include calc(width, "25% - 1em");
+          // margin-left:5%;
+        }
+      }
+        // #issues li.selected img {
+        //   // -webkit-transform: scale(1.1,1.1);
+        //   // -moz-transform: scale(1.1,1.1);
+        //   //   -o-transform: scale(1.1,1.1);
+        //   //   -ms-transform: scale(1.1,1.1);
+        //   //   transform: scale(1.1,1.1);
+        // }
+        // #issues li img {
+        //   // float: left;
+        //   // margin: 10px 30px 10px 50px;
+        //   // background: transparent;
+        //   // -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE 8 */   
+        //   // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);/* IE 6 & 7 */      
+        //   // zoom: 1;
+        //   // -webkit-transition: all 2s ease-in-out;
+        //   // -moz-transition: all 2s ease-in-out;
+        //   // -o-transition: all 2s ease-in-out;
+        //   // -ms-transition: all 2s ease-in-out; 
+        //   // transition: all 2s ease-in-out;
+        //   // -webkit-transform: scale(0.7,0.7);
+        //   // -moz-transform: scale(0.7,0.7);
+        //   //   -o-transform: scale(0.7,0.7);
+        //   //   -ms-transform: scale(0.7,0.7);
+        //   //   transform: scale(0.7,0.7);
+        // }
+        // #issues li h1 {
+        //   color: #ffcc00;
+        //   font-size: 48px;
+        //   margin: 20px 0;
+        //   text-shadow: #000 1px 1px 2px;
+        // }
+        // #issues li p {
+        //   font-size: 14px;
+        //   margin-right: 70px;
+        //   font-weight: normal;
+        //   line-height: 22px;
+        //   text-shadow: #000 1px 1px 2px;
+        // }
+    
+    // #grad_left,
+    // #grad_right {
+    //   width: 100px;
+    //   height: 350px;
+    //   position: absolute;
+    //   top: 0;
+    // }
+    //   #grad_left {
+    //         left: 0;
+    //         background: url('../images/grad_left.png') repeat-y;
+    //   }
+    //   #grad_right {
+    //         right: 0;
+    //         background: url('../images/grad_right.png') repeat-y;
+    //   }
+    
+    // #next,
+    // #prev {
+    //   position: absolute;
+    //   top: 0;
+    //   font-size: 70px;
+    //   top: 170px;
+    //   width: 22px;
+    //   height: 38px;
+    //   background-position: 0 0;
+    //   background-repeat: no-repeat;
+    //   text-indent: -9999px;
+    //   overflow: hidden;
+    // }
+      // #next:hover,
+      // #prev:hover {
+      //   background-position: 0 -76px;
+      // }
+      // #next {
+      //   right: 0;
+      //   background-image: url('../images/next.png');
+      // }
+      // #prev {
+      //   left: 0;
+      //   background-image: url('../images/prev.png');
+      // }
+      //   #next.disabled,
+      //   #prev.disabled {
+      //     opacity: 0.2;
+      //   }
+
+
+
+/** responsive **/
+
+/* (0px above)----------- */
+@media only screen 
+and (min-width : 0px) {
+  .issues__wrapper,
+  #issues,
+  #issues li{    
+    width: 305px !important;
+  }
+  #issues li{
+    margin: -50px -5px 15px 0 !important;
+  }
+}
+/* (370px above)----------- */
+@media only screen 
+and (min-width : 370px) {
+  #issues {    
+    width: 320px;
+  }
+}
+/* (480px above)----------- */
+@media only screen 
+and (min-width : 480px) {
+  .issues__wrapper,
+  #issues,
+  #issues li{    
+    width: 460px !important;
+  }
+  #issues li{
+    margin: 0 -5px 0 0 !important;
+  }
+}
+
+/* (600px above)----------- */
+@media only screen 
+and (min-width : 600px) {
+}
+
+/* (768px above)----------- */
+@media only screen 
+and (min-width : 768px) {
+  .issues__wrapper,
+  #issues,
+  #issues li{    
+    width: 740px !important;
+  }
+}
+
+/* (1024px above)----------- */
+@media only screen 
+and (min-width : 1024px) {
+  #timeline {
+    width: 760px;
+  }
+  .issues__wrapper,
+  #issues,
+  #issues li{    
+    width: 820px !important;
+  }
+}
+
+/* (1280px above)----------- */
+@media only screen 
+and (min-width : 1280px) {
+}
+
+/* (1360px above)----------- */
+@media only screen 
+and (min-width : 1360px) {
+}
+
+/* (1440px above)----------- */
+@media only screen 
+and (min-width : 1440px) {
+}
+
+/* (1680px above)----------- */
+@media only screen 
+and (min-width : 1680px) {
+}
+
+/* (1900px above)----------- */
+@media only screen 
+and (min-width : 1900px) {
+}

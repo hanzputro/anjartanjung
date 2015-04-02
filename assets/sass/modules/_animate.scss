@@ -1,0 +1,46 @@
+
+// animate bottom to up masonry
+@-webkit-keyframes moveUp {
+	0% { }
+	100% { -webkit-transform: translateY(0); opacity: 1; }
+}
+
+@keyframes moveUp {
+	0% { }
+	100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
+}
+
+// animate bottom to up tooltips
+@keyframes animate__bottomtop__tooltips
+{
+	0% {
+		top:10px;
+		opacity:0;
+	}
+	100% {
+		top:0px;
+		opacity:1;
+	}
+}
+
+@-webkit-keyframes animate__bottomtop__tooltips
+{
+	0% {
+		top:10px;
+		opacity:0;
+	}
+	100% {
+		top:0px;
+		opacity:1;
+	}
+}
+
+// animate live record
+@keyframes blink {  
+    0% { background: #ff0000; }
+    100% { background: #f1f1f1; }
+}
+@-webkit-keyframes blink {
+    0% { background: #ff0000; }
+    100% { background: #f1f1f1; }
+}

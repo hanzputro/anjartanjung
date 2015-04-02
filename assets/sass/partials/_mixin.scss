@@ -1,0 +1,159 @@
+﻿
+// no flicker
+@mixin noflicker($noflicker1:hidden, $noflicker2:translateZ(0)){
+  -webkit-backface-visibility: $noflicker1;
+  -moz-backface-visibility:    $noflicker1;
+  -ms-backface-visibility:     $noflicker1;
+              
+  -webkit-transform: $noflicker2;
+  -moz-transform: $noflicker2;
+  -ms-transform: $noflicker2;
+  -o-transform: $noflicker2;
+  transform: $noflicker2;
+}
+
+// vertical-middle
+@mixin vertical-middle(){
+  display:box;
+  display:-ms-flexbox;
+  display:-moz-box;
+  display:-webkit-box;
+
+  box-pack:center;
+  -ms-flex-pack:center;
+  -moz-box-pack:center;
+  -webkit-box-pack:center;
+
+  box-align:center;
+  -ms-flex-align:center;
+  -moz-box-align:center;
+  -webkit-box-align:center;
+}
+
+
+// column
+@mixin column($columncount:0, $columgap:0%, $columnwidth:0%){
+  -webkit-column-count:$columncount;
+  -moz-column-count:$columncount;
+  column-count:$columncount;
+
+  -webkit-column-gap:$columgap;
+  -moz-column-gap:$columgap;
+  column-gap:$columgap;
+
+  -webkit-column-width:$columnwidth;
+  -moz-column-width:$columnwidth;
+  column-width:$columnwidth;
+
+  // -webkit-column-fill: $columnfill;
+  // -moz-column-fill: $columnfill;
+  // column-fill: $columnfill;
+}
+
+//animation
+@mixin animation($animation:moveUp 0.5s ease forwards){
+  -webkit-animation: moveUp 0.5s ease forwards;
+  -moz-animation: moveUp 0.5s ease forwards;
+  -o-animation: moveUp 0.5s ease forwards;
+  animation: moveUp 0.5s ease forwards;
+}
+
+//box shadow
+@mixin boxshadow( $bs1:0px, $bs2:0px, $bs3:0px, $bs4:0px, $bgbs:#777) {
+  -webkit-box-shadow: $bs1 $bs2 $bs3 $bs4 $bgbs;
+     -moz-box-shadow: $bs1 $bs2 $bs3 $bs4 $bgbs;
+          box-shadow: $bs1 $bs2 $bs3 $bs4 $bgbs;
+}
+
+// button style 1
+@mixin btn-style ($btnstylepadding:20px 0px, $btnstylefontsize:18px) {
+	border: none;
+	font-size: $btnstylefontsize;
+	background: none;
+	cursor: pointer;
+  padding: $btnstylepadding;
+	//width:100%;
+	text-align:center;
+	display: inline-block;
+	margin:0;
+	text-transform: uppercase;
+	outline: none;
+	position: relative;
+}
+
+// Button color
+@mixin btn-color ($btnbgcolor:#F83457, $btntextcolor:#000) {
+	background: $btnbgcolor;
+	color: $btntextcolor;
+	//box-shadow: 0 6px #ab3c3c;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+}
+
+// Button 2c
+@mixin btn-radius ($btnradius:5px, $btnshadow:#ab3c3c) {
+	border-radius: $btnradius;
+}
+
+//delay
+@mixin delay($timedelay:.3s){
+  -o-transition:$timedelay;
+  -ms-transition:$timedelay;
+  -moz-transition:$timedelay;
+  -webkit-transition:$timedelay;
+  transition:$timedelay;
+}
+
+// scale image
+@mixin scale ($scale:2){
+  -o-transform:scale($scale);
+  -ms-transform:scale($scale);
+  -moz-transform:scale($scale);
+  -webkit-transform:scale($scale);
+  transform:scale($scale);
+}
+
+//rotate
+@mixin rotate ($rotate:30deg){
+  -o-transform: rotate($rotate);
+  -ms-transform: rotate($rotate);
+  -moz-transform: rotate($rotate);
+  -webkit-transform: rotate($rotate);  
+  transform: rotate($rotate);
+}
+
+//gradient color
+@mixin gradient-color($colortop:#fff,$colorbtm:#aaa) {
+  background-color: $colorbtm;
+  background-repeat: repeat-x;
+  background: -webkit-gradient(linear, 50% 0%, 20% 30%, from($colorbtm), to($colortop));
+  background: -webkit-linear-gradient(top, $colortop, $colorbtm);
+  background: -moz-linear-gradient(top, $colortop, $colorbtm);
+  background: -ms-linear-gradient(top, $colortop, $colorbtm);
+  background: -o-linear-gradient(top, $colortop, $colorbtm);
+}
+
+//blur
+@mixin blurbg ($blursize:5px){  
+  -o-filter: blur($blursize);
+  -ms-filter: blur($blursize);
+  -moz-filter: blur($blursize);
+  -webkit-filter: blur($blursize);  
+  filter: blur($blursize);
+}
+
+// transform
+@mixin transform ($translate:translate(70%, 0%)){
+  -o-transform: $translate;
+  -ms-transform: $translate;
+  -moz-transform: $translate;
+  -webkit-transform: $translate;
+  transform: $translate;
+}
+
+// calculate width or height
+@mixin calc($property, $expression) { 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+}

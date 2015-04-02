@@ -1,0 +1,250 @@
+
+// popup
+
+.popup--show{
+    opacity:1;
+    visibility: visible;
+    @include delay(all 0.5s);
+        .popup__login{
+            top:30%; right:0; left:0;
+            @include delay(all 0.5s);
+        }
+        .popup__search{
+            top: 35px; right:0; left:0; //top:35px;
+            @include delay(all 0.5s);
+        } 
+}
+.popup--hide{
+    opacity:0;
+    visibility: hidden;
+    @include delay(all 0.2s);
+        .popup__login{
+            top:38%; right:0; left:0;
+            @include delay(all 0.5s);
+        } 
+        .popup__search{
+            top:85px; right:0; left:0;
+            @include delay(all 0.5s);
+        }
+}
+
+.bg--blur{
+    filter: url(#svg-blur);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'svg-blur\'><feGaussianBlur stdDeviation=\'5\' /></filter></svg>#svg-blur");
+    @include blurbg (5px);    
+    @include delay(all 0s);
+}
+
+.blur--overlay{        
+    display:block;
+    //display:none;
+    position: fixed;
+    overflow:auto;
+   	top: 0%; left:0%;
+    width: 100%; 
+    height: 100%;
+    background:url('../images/boximg--bghover.png');
+    z-index:100;        
+    //@include blurbg (3px);
+    @include delay(all 0.5s);
+    @include noflicker();
+}
+
+
+// popup search
+section.popup__search--wrapper{
+    top:0;
+    bottom:0;
+    position: absolute;
+    width:100%;
+    min-height: 400px;    
+    z-index: 100; 
+    // overflow: hidden;
+        // popup search 
+        .popup__search--overlay{
+            position: absolute;
+            top:0;
+            width:100%;
+            height:100%;  
+            background:#fff;
+            z-index: 101;
+        }
+        .popup__search{
+            position:relative;
+            // width:990px;
+            min-height: 400px;
+            margin:0 auto;
+            padding:0;
+            // background:#eee;
+            z-index: 102;
+                input.popup__search--input{
+                    width: 100%;
+                    background:#e1e1e1;
+                    // font-size: 40px;
+                    margin:0;
+                    // padding:10px 1%;
+                }
+                .popup__search--close{
+                    position:absolute;
+                    top:5px;
+                    right:10px;
+                    z-index:103;
+                    cursor: pointer;
+                    font-size: 14px;
+                }   
+        }
+}
+
+section.popup__login--wrapper{
+    @extend .popup__search--wrapper;
+    position: fixed;
+    top:0;
+    height: 100%; 
+    z-index: 106;
+        // popup login
+        .popup__login--overlay{
+            position: absolute;
+            top:0;
+            width:100%;
+            height:100%;
+            background:rgba(0, 0, 0, 0.5);
+            z-index: 106;
+        }
+        .popup__login{
+            position:relative;
+            // width:390px;
+            margin:0 auto;
+            // padding:35px 40px;                        
+            border-radius:4px;
+            background:rgba(255, 255, 255, 0.7);
+            z-index: 107;
+                form.popup__login--form{
+                        label.product__sorting--label{
+                            display: inline-block;
+                            // width:80px;
+                            // margin:0 0 10px 0;
+                            font-family: 'Avenir-Medium';
+                        }
+                        input.popup__login--input{
+                            // width: 65%;
+                            font-family: 'Avenir-Medium';
+                        }
+                        .popup__login--font{
+                            color:#616161;
+                            font-size: 16px;
+                            margin:0 0 0 10px;
+                                a{
+                                    color:#bc1718;
+                                }
+                        }
+                }                
+                .popup__login--close{
+                    position:absolute;
+                    top:9px;
+                    right:10px;
+                    z-index:108;
+                    cursor: pointer;
+                    width: 17px; 
+                    height: 17px;
+                    background:url(../images/icon--login--close.png) no-repeat;
+                    opacity:0.3;
+                    &:hover{
+                        opacity:1;
+                    }
+                } 
+                a.popup__login--forgot{
+                    display: block;
+                    margin:10px 0 0 0;
+                    font-size: 14px;
+                    text-decoration: underline;
+                    color:#1f72fc;
+                    &:hover{
+                        color:#1969ee;
+                    }
+                } 
+        }
+}
+
+/** responsive **/
+
+/* (0px above)----------- */
+@media only screen 
+and (min-width : 0px) {
+    .popup__login{        
+        width:90%;
+        padding:3.5% 4%;
+            form.popup__login--form{
+                    label.product__sorting--label{
+                        display: inline-block;
+                        width:100%;
+                        margin:0 0 0 0;                    
+                    }
+                    input.popup__login--input{
+                        width:100%;
+                        margin:0 0 5px 0;
+                    }
+            }
+    }
+    .popup__search{
+        width: 90%;
+            input.popup__search--input{
+                font-size: 30px;                
+                padding:5px 1%;
+            }
+    }
+}
+
+/* (480px above)----------- */
+@media only screen 
+and (min-width : 480px) {
+    .popup__login{        
+        width:390px;
+        padding:35px 40px;
+            form.popup__login--form{
+                    label.product__sorting--label{
+                        display: inline-block;
+                        width:80px;
+                        margin:0 0 10px 0;                    
+                    }
+                    input.popup__login--input{
+                        width: 65%;
+                        margin:0;
+                    }
+            }
+    }
+}
+
+/* (768px above)----------- */
+@media only screen 
+and (min-width : 768px) {
+}
+
+/* (1024px above)----------- */
+@media only screen 
+and (min-width : 1024px) {
+    .popup__search{
+        width: 990px;
+        input.popup__search--input{
+            font-size: 40px;                
+            padding:8px 1%;
+        }
+    }
+}
+
+/* (1360px above)----------- */
+@media only screen 
+and (min-width : 1360px) {
+}
+
+/* (1360px above)----------- */
+@media only screen 
+and (min-width : 1440px) {
+    .popup__search{
+        width: 1300px;
+    }
+}
+
+/* (1900px above)----------- */
+@media only screen 
+and (min-width : 1900px) {
+}

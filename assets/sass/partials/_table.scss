@@ -1,0 +1,365 @@
+
+// tables
+
+// table order history
+table.table__orderhistory{
+  width: 100%;
+  text-align: center;
+  border-radius:20px !important;
+  color:#000;              
+    // head
+    tr.table__orderhistory--header{                                       
+      th{
+        background:#d2d2d2; 
+        padding:8px 0;                    
+      }
+      th:first-child{
+        border-radius:6px 0px 0px 6px;
+      }
+      th:last-child{
+        border-radius:0px 6px 6px 0px;
+      }
+    }               
+    // body
+    tr.table__orderhistory--list{
+      td{
+        margin:8px 0px;
+        padding:4px 2px;
+        font-family: 'Avenir-Medium';
+        // font-size: 14px;
+        color:#000;        
+          a{
+            text-decoration: underline;
+            color:#2692e9;
+            &:hover{
+              color:#1a74bd;
+            }
+          }          
+      }
+      .orderhistory--waiting{
+        color:#ffce0b;
+      }
+      .orderhistory--expired{
+        color:#e22b00;
+      }
+      .orderhistory--success{
+        color:#119d32;
+      }
+    }
+    tr.table__orderhistory--list:nth-child(odd){
+      background:#ebebeb;
+      border-radius:4px;                    
+      td:first-child{
+        border-radius:6px 0px 0px 6px;
+      }
+      td:last-child{
+        border-radius:0px 6px 6px 0px;
+      }
+    }
+}
+
+// table invoice
+table.table__invoice{
+  width: 100%;
+  text-align: center; 
+  color:#000;         
+    // head
+    tr.table__invoice--header{ 
+      border-top:2px solid #ebebeb;
+      border-bottom:2px solid #ebebeb;
+        th{
+        border-right:2px solid #ebebeb;
+        padding:20px 0px 5px 0px;
+        }
+        th:last-child{
+          border-right:0; 
+        }
+    }               
+    // body
+    tr.table__invoice--list{
+      border-bottom:2px solid #ebebeb;
+        td{
+          border-right:2px solid #ebebeb;
+          padding:20px 0px;
+        }
+        td:last-child{
+          border-right:0; 
+        }
+    }
+}
+
+// table details information, shipping cart
+table.table__detailinformation{
+  width: 100%;
+  text-align: center; 
+  color:#000;         
+    // head
+    tr.table__detailinformation--header{ 
+      border-top:2px solid #ebebeb;
+      border-bottom:5px solid #ebebeb;
+        th{
+        // border-right:2px solid #ebebeb;
+        padding:20px 0px 10px 0px;
+        font-weight:normal;
+        }
+        th:last-child{
+          // border-right:0; 
+        }
+    }               
+    // body
+    tr.table__detailinformation--list{
+      border-bottom:2px solid #ebebeb;
+        td{
+          // border-right:2px solid #ebebeb;
+          // padding:20px 0px;
+            ul.detailinformation__imgname--ul{
+              margin:0;
+              padding:0;
+                .detailinformation__imgname--li{
+                  float:left;
+                  display: inline-block;
+                  list-style: none;
+                  text-align: left;
+                  font-family: 'Avenir-Medium';
+                  margin:0 10px 0 0;
+                    img.detailinformation__imgname--img{
+                      // width: 90px;
+                      height:auto;
+                    }
+                    .detailinformation--h5{
+                      color:#b5b5b5;
+                    }                    
+                    .detailinformation--h2{
+                      color:#000;
+                      // margin:12px 0 0 0;
+                      // font-size: 21px;
+                    }
+                }
+            }            
+            .detailinformation--h3{
+              font-weight:normal;
+              font-family: 'Avenir-Medium';
+              color:#555;
+            }
+            .detailinformation__price{
+              font-family: 'Avenir-Medium';
+              text-align: right;
+              font-weight:bold;
+              color:#000;
+            }
+            .detailinformation__textprice{
+              text-align: left;
+            }
+            input.detailinformation--input{
+              @extend .detailinformation--h3;
+              // font-size:18px;
+              // width:40px;              
+              text-align: center;              
+            }
+            .detailinformation__texttotal{
+              @extend .detailinformation__price;
+              text-align: left;
+            }
+        }
+        td:last-child{
+          // border-right:0;          
+        }
+    }
+    tr.table__detailinformation--list:last-child{
+      border-bottom:5px solid #ebebeb;
+    }
+    tr.table__detailinformation--total{
+      @extend tr.table__detailinformation--list;
+      border-top:5px solid #ebebeb;
+    }
+    tr.table__detailinformation--total:last-child{
+      border-bottom:0;
+    }
+}
+
+
+// table order information
+table.table__orderinformation{
+  width: 100%;
+  text-align: center; 
+  color:#000;
+  font-family: 'Avenir-Medium';
+  font-size: 13px;
+  tr{
+      td{
+      }
+  }         
+    // head
+    tr.table__orderinformation--header{ 
+      border-top:2px solid #ebebeb;
+      border-bottom:2px solid #ebebeb;
+        th{
+        padding:5px 15px;
+        }
+        th:last-child{
+        }
+    }               
+    // body
+    tr.table__orderinformation--list{
+      // border-bottom:2px solid #ebebeb;
+        td{          
+          padding:2px 15px;          
+        }
+    }
+    tr.table__orderinformation--total{
+        border-top:2px solid #ebebeb;
+        background:#f4f4f4;
+          td{          
+            padding:10px 15px;  
+              .adjustment__code__payment{
+                display: none;
+                font-family: 'Avenir-Medium';
+                font-size: 13px;
+                margin:0;
+              }        
+          }
+    }
+    tr.table__orderinformation--total:nth-child(odd){
+        background:#fff; 
+          td{          
+            padding:5px 15px;          
+          }         
+    }
+    tr{
+        .orderinformation--textleft{
+          text-align: left;
+        }
+        .orderinformation--textright{
+          text-align: right;
+        }
+    }
+    tr:nth-child(5){
+      border-top:0;
+    }
+}
+
+/** responsive **/
+
+/* (0px above)----------- */
+@media only screen 
+and (min-width : 0px) {
+   tr{                                       
+      th{
+        font-size: 14px;                    
+      }
+  }
+  tr{
+      td{
+        font-size: 13px; 
+      }
+  }
+  .detailinformation__imgname--li{ 
+      .detailinformation--h5{
+        display: none;
+      }                 
+      .detailinformation--h2{
+        font-size: 14px;
+        margin:0;
+      }
+  }
+  .detailinformation--h3,
+  .detailinformation__imgname--h3{
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  tr.table__detailinformation--list{
+    border-bottom:2px solid #ebebeb;
+      td{
+        padding:5px 0px;
+      }
+  }
+  input.detailinformation--input{
+    font-size:12px;
+    width:30px;  
+    margin:0 3px;
+  }
+  img.detailinformation__imgname--img{
+    // width: 40px;
+    display: none;
+  }
+}
+
+/* (480px above)----------- */
+@media only screen 
+and (min-width : 480px) {
+  tr{                                       
+      th{
+        font-size: 16px;                    
+      }
+  }
+  tr{
+      td{
+        font-size: 14px;
+      }
+  }
+  .detailinformation__imgname--li{ 
+      .detailinformation--h5{
+        display: none;
+      }                 
+      .detailinformation--h2{
+        font-size: 14px;
+        margin:0;
+      }
+  }
+  .detailinformation--h3,
+  .detailinformation__imgname--h3{
+    font-size: 14px;
+  }
+  tr.table__detailinformation--list{
+    border-bottom:2px solid #ebebeb;
+      td{
+        padding:20px 0px;
+      }
+  }
+  input.detailinformation--input{
+    font-size:14px;
+    width:40px;  
+  }
+  img.detailinformation__imgname--img{    
+    width: 90px;
+  }
+}
+
+/* (768px above)----------- */
+@media only screen 
+and (min-width : 768px) {
+   .detailinformation__imgname--li{  
+      .detailinformation--h5{
+        display: inline-block;
+      }                  
+      .detailinformation--h2{
+        font-size: 21px;
+        margin:12px 0 0 0;
+      }
+  }
+  .detailinformation--h3,
+  .detailinformation__imgname--h3{
+    font-size: 18px;
+  }
+  input.detailinformation--input{
+    font-size:18px;
+  }
+  img.detailinformation__imgname--img{    
+    display: inline-block;
+  }
+}
+
+/* (1024px above)----------- */
+@media only screen 
+and (min-width : 1024px) {
+}
+
+/* (1360px above)----------- */
+@media only screen 
+and (min-width : 1360px) {  
+}
+
+/* (1440px above)----------- */
+@media only screen 
+and (min-width : 1440px) { 
+}

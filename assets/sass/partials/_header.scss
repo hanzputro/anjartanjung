@@ -1,0 +1,83 @@
+
+// header 
+
+div.container__header{
+  position: relative;
+  overflow:hidden !important;
+  margin:0 0 0px 0;
+  text-align: center;  
+    .header__wrapper{
+      position: relative;      
+      width: 100%;      
+      text-align: center;
+      z-index: 2;      
+        .header{
+          display: inline-block;
+          width: 985px;
+          margin:0 auto 145px auto;          
+          padding: 30px 0 0 0;
+            .logo--header{
+              background: url("../images/logo.png") no-repeat;
+              width:533px;
+              height:116px;
+              margin:60px auto 35px auto;
+            }
+            nav.menubar--nav{
+              margin: 0 auto;
+                ul.menubar--ul{
+                  display: inline-block;
+                    li.menubar--li{
+                      display: inline-block;
+                      float:left;
+                      margin: 0 40px 0 0;
+                        a.menubar--a{
+                          display: block;
+                          font-family: 'avantgardef';
+                          font-size: 12px;
+                          font-weight: bold;
+                          color:#474744;
+                          letter-spacing:1px;
+                        }
+                        a.menubar__linksosmed{
+                          display:inline-block;
+                          margin:-8px 0 0 0;
+                        }
+                        a.menubar__linksosmed:last-child{
+                          margin:-8px 0 0 -1px;
+                        }
+                    }
+                    li.menubar--li:last-child{
+                      margin-right:0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** responsive **/
+
+/* (0px above)----------- */
+@media only screen 
+and (min-width : 0px) {
+}
+
+/* (768px above)----------- */
+@media only screen 
+and (min-width : 768px) {
+}
+
+/* (1024px above)----------- */
+@media only screen 
+and (min-width : 1024px) {
+}
+
+/* (1360px above)----------- */
+@media only screen 
+and (min-width : 1360px) {
+}
+
+/* (1440px above)----------- */
+@media only screen 
+and (min-width : 1900px) {
+}

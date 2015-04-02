@@ -1,0 +1,124 @@
+
+  // calender
+      .zabuto_calendar{
+        background:$abuabu2;
+        margin:15px 0 0 0 !important; padding:0px 15px 5px 15px !important;
+        border-radius:5px 5px 0 0;
+          .table{
+            border-collapse: separate !important;
+              tbody{
+                  tr{
+                    background:none !important;
+                      td{
+
+                          .day{
+                            display:table-cell;
+                            width:34px !important; 
+                            height:26px !important;
+                            @include gradient-color(#2e2f34, #2d2d33);
+                            margin:0 !important; padding:0 !important;
+                            vertical-align: middle !important;
+                              .badge{
+                                
+                              }
+                              .badge-event{
+                                @include gradient-color(#45191e, #29262a);
+                                margin:0 !important; padding:9px 0 !important;
+                                display:block;
+                              }
+                          }
+                      }
+                      .event{
+
+                      }
+                      .event-styled{
+                          .today-event{
+                            // @extend .event-onclick;
+                            // color:#fff !important;
+                            margin:0 !important; padding:0px 0 0 0 !important;                            
+                            width: 31px !important;
+                            height:25px !important;
+                            color:#fff !important;
+                            @include gradient-color(#885f24, #27272a);
+                            background-color: #27272a !important;
+                            background-repeat: repeat-x !important;
+                            background: -webkit-gradient(linear, 50% 0%, 20% 30%, from(#27272a), to(#885f24)) !important;
+                            background: -webkit-linear-gradient(top, #885f24, #27272a) !important;
+                            background: -moz-linear-gradient(top, #885f24, #27272a) !important;
+                            background: -ms-linear-gradient(top, #885f24, #27272a) !important;
+                            background: -o-linear-gradient(top, #885f24, #27272a) !important;
+                            border:1px solid #885f24 !important;
+                          }
+                      }
+                      .event-clickable{
+                          .day{
+                            @extend .day;
+                            @include gradient-color(#272626, #202020);
+                            border:1px solid #52080a;
+                              .badge{
+                                
+                              }
+                              .badge-event{
+                                // @extend .badge-event;
+                              }
+                              .badge-today{
+                                // @extend .badge;
+                              }
+                          }
+                          .event-onclick{
+                            @include gradient-color(#45191e, #29262a);
+                            border:1px solid #52080a;
+                            color:#fff;
+                            margin:0 !important; padding:5px 0px 0px 0 !important;                            
+                            width: 26px !important;
+                            height:20px !important;
+                            display:block;
+                          }                          
+                      }
+                  }
+                  .calendar-month-header{
+                      th{
+                        margin:5px 0 0 0 !important; padding:0 !important;
+                        background:none !important;
+                          .calendar-month-navigation{
+                            margin:20px 0 0 0 !important; padding:0 !important;
+                              span{
+                                margin:5px 0 15px 0; padding:0;
+                              }
+                              .glyphicon{
+                                margin:-20px 0 0 0; padding:0; 
+                              }
+                          }
+                      }
+                      th:nth-child(2){
+                          span{
+                            display:block;
+                            color:white; font-size:12px; font-weight:100; text-transform:uppercase; text-shadow:none;
+                            margin:-5px 0 -15px 0; padding:10px 10px;
+                            background:$abuabu3; border-radius:30px;
+                          }
+                      }
+
+                  }
+                  .calendar-dow-header{
+                      th{
+                        background:none !important;
+                        color:white; font-size:8px; font-weight:100; text-transform:uppercase; text-shadow:none; letter-spacing:0.4px;
+                      }
+                  }
+                  .calendar-dow{
+                    margin:0; padding:0px 10px !important;
+                      td{
+                        background:none !important;
+                        margin:1 !important; padding:1px 1px !important;                        
+                        color:$abuabutext4; font-size:12.11px; font-weight:100;
+                      }
+
+                  }
+              }
+          }
+          .legend{
+
+          }
+      }
+  

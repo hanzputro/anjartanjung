@@ -1,0 +1,51 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,500,600,700);
+// tooltips
+
+.tooltips__gallery {
+    // position: relative;
+    // display: inline;
+    // display:block;
+    &:hover{
+        span{
+            display:inline;
+            opacity: 1;            
+            z-index: 99999999;
+            position: absolute;
+            font-size:8.5px; 
+            letter-spacing: 1px;
+            color: $abuabutext3;            
+            text-align: center;
+            border-radius: 10px;
+            line-height: normal;
+            font-weight:100;
+            width:140px;
+            top: 0; right:0; left:0;
+            padding:5px 5px;
+            margin: -35px 0px 0px -20px;
+            @include gradient-color( #ccc, #fff);
+            @include boxshadow( 0px, 5px, 12px, 0px, #ccc);
+            -webkit-animation: animate__bottomtop__tooltips 0.3s ease; /* Safari 4+ */
+            -moz-animation: animate__bottomtop__tooltips 0.3s ease; /* Fx 5+ */
+            -o-animation: animate__bottomtop__tooltips 0.3s ease; /* Opera 12+ */
+            animation: animate__bottomtop__tooltips 0.3s ease; /* IE 10+ */ 
+            &:after{
+                content: '';
+                position: absolute;
+                top: 100%;
+                left:0; right:0;
+                margin: 0px auto;
+                width: 0; 
+                height: 0;
+                border-left: 8px solid transparent;
+                border-top: 8px solid #fff;
+                border-right: 8px solid transparent;
+            }
+            font{
+                font-size: 14px;
+            }
+        }
+    }
+    span{
+        display: none;
+    }
+}

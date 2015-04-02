@@ -1,0 +1,96 @@
+@mixin sprite($width, $height, $margin, $position) {
+	background:url(../images/sprite.png) $position no-repeat;
+	display: inline-block;
+	width: $width;
+	height: $height;
+	margin-right:$margin;
+}
+
+@mixin sprite-right($width, $height, $margin, $position) {
+	background:url(../images/sprite.png) $position no-repeat;
+	display: inline-block;
+	width: $width;
+	height: $height;
+	margin-left:$margin;
+}
+
+.ico-bell {
+	@include sprite(18px, 20px, 0, -200px 0);
+}
+.ico-qash {
+	@include sprite(16px, 18px, 10px, -200px -50px);
+	vertical-align: middle;
+}
+
+.ico-facebook {
+	@include sprite(44px, 44px, 10px, 0 -100px);
+}
+.ico-twitter {
+	@include sprite(44px, 44px, 10px, -50px -100px);
+}
+.ico-instagram {
+	@include sprite(44px, 44px, 10px, -100px -100px);
+}
+.ico-youtube {
+	@include sprite(44px, 44px, 10px, -150px -100px);
+}
+.ico-midplaza {
+	@include sprite-right(93px, 16px, 10px, -100px -50px);
+}
+
+.ico-logo-qash {
+	@include sprite(150px, 40px, 0, 0 -150px);
+}
+.ico-logo-qpon {
+	@include sprite(150px, 40px, 0, 0 -200px);
+}
+.ico-logo-qpocket {
+	@include sprite(150px, 40px, 0, 0 -250px);
+}
+.ico-logo-qwarnet {
+	@include sprite(150px, 40px, 0, 0 -400px);
+}
+.ico-logo-qplay {
+	@include sprite(150px, 40px, 0, 0 -300px);
+}
+.ico-logo-qleader {
+	@include sprite(150px, 40px, 0, 0 -350px);
+}
+.ico-image {
+	@include sprite(16px, 14px, 10px, -300px -50px);
+}
+.ico-warning {
+	@include sprite(24px, 24px, 10px, -450px 0);
+	flex-shrink:0;
+}
+.ico-ok {
+	@include sprite(24px, 24px, 10px, -650px 0);
+}
+.ico-fail {
+	@include sprite(24px, 24px, 10px, -700px 0);
+}
+.ico-qpon-qpon {
+	@include sprite(150px, 50px, 0, -150px -200px);
+}
+.ico-qpon-cog {
+	@include sprite(150px, 70px, 0, -150px -250px);
+}
+.ico-qpon-heva {
+	@include sprite(150px, 50px, 0, -150px -350px);
+}
+.ico-qpon-kuf {
+	@include sprite(150px, 50px, 0, -150px -400px);
+}
+.ico-qpon-wom {
+	@include sprite(150px, 75px, 0, -500px -350px);
+}
+
+.ico-place {
+	@include sprite(11px, 15px, 10px, -500px 0);
+}
+.ico-phone {
+	@include sprite(13px, 15px, 10px, -550px 0);
+}
+.ico-mail {
+	@include sprite(19px, 15px, 10px, -600px 0);
+}

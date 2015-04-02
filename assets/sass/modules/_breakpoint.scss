@@ -1,0 +1,30 @@
+//Media Query
+@mixin break ($point) {
+  @if $point == 1920 {
+    @media (max-width: 1920px) { @content; }
+  }
+  @if $point == 1600 {
+    @media (max-width: 1600px) { @content; }
+  }
+  @else if $point == 1300 {
+    @media (max-width: 1300px) { @content; }
+  }
+  @else if $point == 980 {
+    @media (max-width: 980px) { @content; }
+  }
+  @else if $point == 800 {
+    @media (max-width: 800px)  { @content; }
+  }
+  @else if $point == 600 {
+    @media (max-width: 600px)  { @content; }
+  }
+  @else if $point == 480 {
+    @media (max-width: 480px)  { @content; }
+  }
+  @else if $point == 400 {
+    @media (max-width: 400px)  { @content; }
+  }
+  @else if $point == retina {
+    @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) { @content; }
+  }
+}

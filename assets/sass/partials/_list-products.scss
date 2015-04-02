@@ -1,0 +1,185 @@
+
+// list products
+.loader{
+   @include delay (.5s all);
+}
+.loader--show{
+  position: absolute;
+  width:100%;
+  height:100%;
+  background:rgba(255, 255, 255, 0.7);
+  z-index: 10; 
+    .loader--gif{
+      position: absolute;
+      width:70px;
+      height:70px;
+      top:45%; right:45%; bottom:45%; left:45%;
+      background:url('../images/bx_loader_big.gif') no-repeat center center #fff;
+      // background-position: cover;
+      // @include delay (.0s all);
+    }
+}
+
+.product__sorting{
+  // margin:0 0 40px 20px;
+  text-align: left;
+    label.product__sorting--label{
+      font-family: 'Avenir-Medium';
+      font-size:14px;
+      font-weight:bold;
+    }
+    select.product__sorting--select{
+      &:after{
+        content: '';
+        position: absolute;
+        top: 100%;
+        left:0; right:0;
+        margin: 0px auto;
+        width: 0; 
+        height: 0;
+        border-left: 8px solid transparent;
+        border-top: 8px solid #fff;
+        border-right: 8px solid transparent;
+      }
+        option{              
+        }
+    }
+}
+.product--ul{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin:0;
+  padding:0 0 10px 0;
+  // border-bottom:1px solid #e3e3e3;
+  border-right:none;
+  border-top:none;
+  border-left:none;
+    .product--li{
+      float:left;
+      list-style: none;
+      // width: 225px;
+      // margin:0 22px 25px 0;
+        .product--a{
+          display: block;
+          text-align: center;
+            .product--img{
+              max-width: 100%;
+            }
+            .product--title{
+              color:#555555;
+              margin:0;
+              font-family: 'MyriadPro-Regular';
+              font-weight:normal;
+            }
+            .product--price{                        
+              @extend .product--title;
+              color:#cccccc;
+            }
+        }
+    }
+}
+.product__pagination{
+  text-align: center;
+    .product__pagination--ul{
+      text-align:right;
+      // width:130px;
+      display: inline-block;
+      // margin:10px 0 0 0;
+      padding:0 0 10px 0;
+        .product__pagination--li{
+          float:left;
+          list-style: none;          
+            .product__pagination--a{
+              position:relative;
+              display: inline;
+              margin:0 6px;
+              padding:0;
+              font-family: 'Avenir-Medium';
+              font-size: 16px;
+              color:#959595;
+            }
+            .product__pagination--active{
+              @extend .product__pagination--a;
+              color:#fefefe;
+              background:#ac907e;
+              border-radius:50%;
+              padding:0 6px;
+            }
+        }
+    }
+}
+
+
+/** responsive **/
+
+/* (0px above)----------- */
+@media only screen 
+and (min-width : 0px) {
+  .product__sorting{
+    margin:0 0 40px 0px;
+  }
+  .product--li{
+    width: 48%;
+    margin:0 1% 25px 1%;
+  }
+  .product__pagination{
+    text-align: center;
+      .product__pagination--ul{
+        width:220px;
+          .product__pagination--li{
+            margin:0 8px;
+          }
+      }
+  }
+}
+
+/* (480px above)----------- */
+@media only screen 
+and (min-width : 480px) {
+  .product__sorting{
+    margin:0 0 40px 0px;
+  }
+  .product--li{
+    width: 31%;
+  }
+}
+
+/* (768px above)----------- */
+@media only screen 
+and (min-width : 768px) {
+  .product--li{
+    width: 23%;
+  }
+}
+
+/* (1024px above)----------- */
+@media only screen 
+and (min-width : 1024px) {
+  .product__sorting{
+    margin:0 0 40px 20px;
+  }
+  // .product--li{
+  //   width: 225px;
+  //   margin:0 22px 25px 0;
+  // }
+  .product__pagination{
+    text-align: right;
+      .product__pagination--ul{
+        width:130px;
+          .product__pagination--li{
+            margin:0 0px;
+          }
+      }
+  }
+}
+
+/* (1360px above)----------- */
+@media only screen 
+and (min-width : 1360px) {  
+}
+
+/* (1440px above)----------- */
+@media only screen 
+and (min-width : 1440px) { 
+}

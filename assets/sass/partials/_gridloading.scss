@@ -1,0 +1,30 @@
+.grid {
+	max-width: 100%;
+	list-style: none;
+	margin: 0px auto;
+	padding: 0;
+}
+
+.grid .gridloading--li {
+	display: block;
+	float:left;
+	padding: 0px !important;
+	margin:6.5px 6.5px 6.5px 6.5px !important;
+	// width: 23.5% !important;
+	// width:205px !important;
+	opacity: 0;
+}
+
+.grid .gridloading--li.shown,
+.no-js .grid .gridloading--li,
+.no-cssanimations .grid .gridloading--li {
+	opacity: 1;
+}
+
+.grid .gridloading--li a,
+.grid .gridloading--li img {
+	outline: none;
+	border: none;
+	display: block;
+	max-width: 100%;
+}
