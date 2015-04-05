@@ -31,22 +31,18 @@
 	</div> -->
 
 	<div class="container">
-		
-		<div class="container__header">
 
-			<div class="header__wrapper">
-				<div class="header">
-					<div class="logo--header"></div>
-					<nav class="menubar--nav">
-						<ul class="menubar--ul">
-							<li class="menubar--li"><a href="about.php" class="menubar--a">HOME</a></li>
-							<li class="menubar--li"><a href="businesses.php" class="menubar--a">PORTFOLIO</a></li>
-							<li class="menubar--li"><a href="highlights.php" class="menubar--a">INFORMATION</a></li>
-							<li class="menubar--li"><a href="career.php" class="menubar--a">CONTACT US</a></li>
-							<li class="menubar--li"><a href="contact.php" class="menubar--a">BLOG</a></li>
-						</ul>
-					</nav>		
-				</div>			
-			</div>
-
-		</div><!-- /container__header -->
+		<div class="header__wrapper">
+			<div class="header">
+				<div class="logo__header"></div>
+				<nav class="menubar--nav">
+					<ul class="menubar--ul">
+						<li class="menubar--li"><a href="index.php" class="menubar--a">HOME</a></li>
+						<li class="menubar--li"><a href="portfolio.php" class="menubar--a">PORTFOLIO</a></li>
+						<li class="menubar--li"><a href="information.php" class="menubar--a">INFORMATION</a></li>
+						<li class="menubar--li"><a href="contactus.php" class="menubar--a">CONTACT US</a></li>
+						<li class="menubar--li"><a href="blog.php" class="menubar--a">BLOG</a></li>
+					</ul>
+				</nav>		
+			</div>			
+		</div>

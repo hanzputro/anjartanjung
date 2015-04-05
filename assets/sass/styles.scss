@@ -1,7 +1,7 @@
 /*
-Template Name: Midplaza Holding
+Template Name: anjartanjung wordpress themes
 Version: 0.1
-Author: PT. Qeon Interactive (Hanif Putra)
+Author: hanzputro (Hanif Putra)
 */
 /*********************************************************/
 /*                 sass config                  */
@@ -50,91 +50,29 @@ a{
 html {
   position: relative; 
   min-height:100%;
-  -webkit-font-smoothing: antialiased;
-
 }
 body {  
   // display: initial;
   background:#fffffe;
-  font-weight: 400;
-  font-size: 100%;
-  font-family: 'Open Sans', sans-serif;
-  color: #333;
-  margin:0 0 259px 0;
+  margin:0;
   padding:0;
   // height:100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container{
-  position:relative;
-  margin:0 auto;
-  padding:0;
-  min-height:100%; 
+  // position: relative;
+  // width:985px;
   overflow:hidden;
-  overflow-x: hidden; 
+  margin:0 auto;
+  padding:0 0 40px 0;
+  text-align: center; 
 }
 
 div.container__main{
-  text-align: center;
-    .main__wrapper{
-      text-align: center;
-        .main{
-          display: inline-block;
-          margin: 0 auto;
-          text-align: left;
-          // width:950px;
-            .breadcrumb{
-              display: inline-block;
-              vertical-align: middle;
-              height: 20px;
-              margin:0 0 25px 0;            
-                a.breadcrumb--a{
-                  display: block;
-                  vertical-align: middle;
-                  height: 20px;
-                  float:left;
-                    p.breadcrumb--p{
-                      font-family: 'alrightsans-light';
-                      // font-size: 16px;
-                      color:#808285;
-                      margin:0;
-                      line-height: 22px;
-                    }
-                }
-                span.icon--arrow__breadcrumb{
-                  display: inline-block;
-                  float:left;
-                  margin:0 6px;
-                }                
-            }
-            .breadcrumb2{
-              @extend .breadcrumb;
-              margin: 0 0 20px 0;
-            }
-            h4.title__main--h4{
-              font-family: 'alrightsans-medium';
-              font-weight: normal;
-              letter-spacing: 0.8px;
-              line-height: 23px; 
-              color:#5b6781;
-              margin:10px 0;
-            }
-            h5.desc__main--h5{
-              font-family: 'lato-regular';
-              // font-size:16px;
-              font-weight: normal;
-              font-style: oblique;
-              letter-spacing: 0.5px;
-              color:#808285;
-              // line-height: 23px;              
-            }
-            hr.main--hr{
-              border:none;
-              border-top:1px solid #e0e0e1;
-              width:115px;
-              margin:30px auto 40px auto;
-            }
-        }
+  text-align: center;  
+    .main__wrapper{   
     }
 }
 
@@ -143,6 +81,9 @@ div.container__main{
 /* (0px above)----------- */
 @media only screen 
 and (min-width : 0px) {
+  .container{
+    width:90%;
+  }
 }
 
 /* (480px above)----------- */
@@ -157,6 +98,9 @@ and (min-width : 768px) {
 /* (1024px above)----------- */
 @media only screen 
 and (min-width : 1024px) {
+  .container{
+    width:985px;
+  }
 }
 
 /* (1360px above)----------- */

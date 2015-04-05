@@ -3,36 +3,19 @@
 @import "reset/normalize";
 
 // modules
-// @import "modules/breakpoint";
-// @import "modules/sprite";
-@import "modules/color-palette";
-// @import "modules/animate";
 @import "modules/fonts";
 
 // partials
 @import "partials/typography";
-@import "partials/form";
+// @import "partials/form";
 @import "partials/mixin";
 @import "partials/header";
 @import "partials/footer";
-// @import "partials/sidebar";
-// @import "partials/list-products";
-@import "partials/button";
-// @import "partials/table";
-// @import "partials/popup";
-@import "partials/icons";
-@import "partials/slider";
-// @import "partials/tabs";
-// @import "partials/gridloading";
-// @import "partials/calender";
-// @import "partials/tooltips";
 
 // page
 @import "pages/home";
+@import "pages/portfolio";
+@import "pages/information";
+@import "pages/contactus";
 
 // vendor
-@import "vendor/timelinr";
-@import "vendor/bxslider";
-// @import "vendor/nanoscroller";
-// @import "vendor/zabuto_calendar.min";
-// @import "vendor/baguetteBox";

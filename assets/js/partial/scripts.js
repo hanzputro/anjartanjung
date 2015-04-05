@@ -1,7 +1,6 @@
-
 $(document).ready(function(){
 
-    // when hash is #award then scroll to #award__wrapper 
+    ///////////// when hash is #award then scroll to #award__wrapper 
     if(document.location.hash) {        
         // call function
         $().timelinr({

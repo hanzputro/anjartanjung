@@ -1,20 +1,23 @@
 
-// home page
-.main{
-  display: inline-block;
-  margin: 0 auto;
-  text-align: left;
-  // width:950px;
-  	.main__slider{
-  		ul.main__slider--ul{
-  			margin:0 auto;
-  			li.main__slider--li{
-  				.main__slider--img{
-
-  				}
-  			}
-  		}
-  	}
+// information page
+.information{
+	display: block;
+	.information__left{
+		float:left;
+		width:44%;
+		margin:0 4% 0 0;
+		img.information__left--img{
+			min-width:100%;
+		}
+	}
+	.information__right{
+		float:left;
+		width:52%;
+		text-align:left;
+		p{
+			letter-spacing: 0.9px;
+		}
+	}
 }
 
 /** responsive **/
