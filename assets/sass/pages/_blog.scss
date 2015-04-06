@@ -1,0 +1,50 @@
+
+// home page
+.main{
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+  // width:950px;
+  	.main__slider{
+  		ul.main__slider--ul{
+  			margin:0 auto;
+  			li.main__slider--li{
+  				.main__slider--img{
+
+  				}
+  			}
+  		}
+  	}
+}
+
+/** responsive **/
+
+/* (0px above)----------- */
+@media only screen 
+and (min-width : 0px) {
+}
+
+/* (480px above)----------- */
+@media only screen 
+and (min-width : 480px) {
+}
+
+/* (768px above)----------- */
+@media only screen 
+and (min-width : 768px) {
+}
+
+/* (1024px above)----------- */
+@media only screen 
+and (min-width : 1024px) {
+}
+
+/* (1360px above)----------- */
+@media only screen 
+and (min-width : 1360px) {
+}
+
+/* (1900px above)----------- */
+@media only screen 
+and (min-width : 1900px) {
+}

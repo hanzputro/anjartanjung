@@ -1023,5 +1023,21 @@ button.send--button:hover {
 /* (1024px above)----------- */
 /* (1360px above)----------- */
 /* (1900px above)----------- */
+.main {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+}
+.main .main__slider ul.main__slider--ul {
+  margin: 0 auto;
+}
+
+/** responsive **/
+/* (0px above)----------- */
+/* (480px above)----------- */
+/* (768px above)----------- */
+/* (1024px above)----------- */
+/* (1360px above)----------- */
+/* (1900px above)----------- */
 
 /*# sourceMappingURL=core.css.map */
