@@ -2,7 +2,7 @@ form {
 }
 
 input,form,select,textarea {
-	font-family: 'alrightsans-regular';
+	font-family: 'avantgardef';
 	&[disabled] {
 		opacity: .5;
 		cursor: not-allowed;
@@ -11,11 +11,11 @@ input,form,select,textarea {
 input, textarea,select {
 	max-width: 100%;
 	background-color:#fff;
-	color:#5b6681;		
+	color:#474744;		
 	padding:4px 5px;
 	// border: 1px solid #cfcfcf;
 	vertical-align: middle;
-	font-size:14px;
+	font-size:16px;
 	// font-style: italic;
 	letter-spacing:1px;
 
@@ -144,40 +144,44 @@ input[type="radio"]:checked + label:after {
 }
 
 //////// form style
-input.search__h--input{
-	display: inline-block;
-	font-family: 'alrightsans-regular';
-	font-size:13px;
-	width:100%;
-	height:20px;
-	padding:0px 10px;
-	border:1px solid #c6c7cb;
-	border-radius:10px;
-	background:#e0e2e6;
-	&:active,&:focus{
-		background:#fff;
-	}
-}
 form{
-	.form__contact__wrapper{		
-			input[type="text"],
-			input[type="email"]{
-				width:100%;
-				height:35px;
+	.form__wrapper{
+		label{
+			position:relative;
+			float:left;
+			width:30%;
+			height:30px;
+			margin:0 3% 0 0;
+			padding:10px 0 0 0;
+			font-family: 'avantgardef';
+			font-size:16px;
+			letter-spacing: 1px;
+			color:#676765;
+			text-shadow:
+			    0 0 0px #d1d1d0, 0 0 0px #d1d1d0, 
+			    0 0 0px #d1d1d0, 0 0 0px #d1d1d0,
+			    0 0 0px #d1d1d0, 0 0 0px #d1d1d0; 
+			&:before{
+				content:":";
+				position:absolute;
+				right:0;
+
+			}		
+		}		
+			input{
+				width:67%;
+				height:40px;
 				margin:0 0 15px 0;
-			}
-			input.error{
-				border:2px solid #c6202b;
+				&.error{
+					border:2px solid #c6202b;
+				}
 			}
 			textarea{
-				width: 100%;
-				height:115px;
+				width:67%;
 				margin:0 0 15px 0;
-			}
-			span.info--error{
-				color:#fff;
-				font-size: 13px;
-				margin: 0 0 0 15px;
+				&.error{
+					border:2px solid #c6202b;
+				}
 			}
 	}
 }

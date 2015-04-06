@@ -1,48 +1,19 @@
 
 // button
-.more--button{
-    display: inline-block;
-    font-family: 'alrightsans-medium';
-    font-size:9px;
-    letter-spacing: 1px;
-    color:#fff;
-    text-align: center;
-    padding:8px 14px;
-    background:#202e4c;
-    border-radius:5px;
-    @include delay (.2s all);
-    &:hover{
-        background:#0e2554;
+button{
+    font-family: 'avantgardef';
+    padding:10px 25px;
+    &.send--button{
+        float:right;
+        color:#fdfdfc;
+        letter-spacing: 2px;
+        background:#8c8c88;
+        border:1px solid #4c4c4a;
+        font-weight: bold;
+        &:hover{
+            background:#4c4c4a;
+        }
     }
-}
-
-.more2--button{
-    @extend .more--button;
-    font-size:12px;
-    padding:12px 28px;
-}
-.more3--button{
-    @extend .more--button;
-    font-size:9.4px;
-    padding:10px 15px;
-}
-.send--button{
-    @extend .more--button;
-    font-size:11px;
-    padding:10px 35px;
-    color:#d9dbe0;
-    border:2px solid #d9dbe0;
-}
-.load--button{
-    @extend .more3--button;
-    padding:10px 5px;
-    display: inline-block;
-    position: absolute;
-    width:85px;
-    bottom:0; right:0; left:0;
-    margin: 0 auto;
-    cursor: pointer;
-    clear:both;
 }
 /** responsive **/
 

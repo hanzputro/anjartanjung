@@ -496,8 +496,8 @@ h2.lt {
 p {
   font-size: 15px;
   line-height: 21px;
-  color: #626467;
-  letter-spacing: 0.7px;
+  color: #76787A;
+  letter-spacing: 0.3px;
   margin: 0;
   text-shadow: 0 0 0px #eeeeee, 0 0 0px #eeeeee,  0 0 0px #eeeeee, 0 0 0px #eeeeee, 0 0 0px #eeeeee, 0 0 0px #eeeeee;
 }
@@ -522,6 +522,177 @@ article {
 
 ul {
   padding: 0;
+}
+
+/** responsive **/
+/* (0px above)----------- */
+/* (480px above)----------- */
+/* (768px above)----------- */
+/* (1024px above)----------- */
+/* (1360px above)----------- */
+/* (1440px above)----------- */
+input, form, select, textarea {
+  font-family: 'avantgardef';
+}
+input[disabled], form[disabled], select[disabled], textarea[disabled] {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+input, textarea, select {
+  max-width: 100%;
+  background-color: #fff;
+  color: #474744;
+  padding: 4px 5px;
+  vertical-align: middle;
+  font-size: 16px;
+  letter-spacing: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input:active, input:focus, textarea:active, textarea:focus, select:active, select:focus {
+  outline: none;
+}
+input option, textarea option, select option {
+  color: #959595;
+  background: rgba(237, 237, 237, 0.9);
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 1px solid rgba(235, 235, 235, 0.9);
+  border-radius: 4px;
+}
+
+select.combobox {
+  background: #f7f7f7;
+}
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #c4c3c3;
+  background: transparent;
+  border-radius: 2px;
+}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: "aaa";
+  text-indent: -9999px;
+  background: url("../images/icon--checklist.png") no-repeat;
+  width: 12px;
+  height: 11px;
+  position: absolute;
+  top: 3px;
+  font-size: 15px;
+  color: #09ad7e;
+  transition: all .1s;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* checkbox aspect */
+input[type="radio"] {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 10px;
+  width: 10px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+input[type="radio"] + label {
+  height: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+label.custom--label:before, input[type="radio"]:checked + label:after {
+  content: "";
+  position: absolute;
+  text-indent: -9999px;
+  height: 10px;
+  width: 10px;
+  background: url("../images/icon--radiobox.png") no-repeat;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input[type="radio"]:checked + label:after {
+  background: url("../images/icon--radiobox.png") no-repeat;
+}
+
+form .form__wrapper label {
+  position: relative;
+  float: left;
+  width: 30%;
+  height: 30px;
+  margin: 0 3% 0 0;
+  padding: 10px 0 0 0;
+  font-family: 'avantgardef';
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #676765;
+  text-shadow: 0 0 0px #d1d1d0, 0 0 0px #d1d1d0,  0 0 0px #d1d1d0, 0 0 0px #d1d1d0, 0 0 0px #d1d1d0, 0 0 0px #d1d1d0;
+}
+form .form__wrapper label:before {
+  content: ":";
+  position: absolute;
+  right: 0;
+}
+form .form__wrapper input {
+  width: 67%;
+  height: 40px;
+  margin: 0 0 15px 0;
+}
+form .form__wrapper input.error {
+  border: 2px solid #c6202b;
+}
+form .form__wrapper textarea {
+  width: 67%;
+  margin: 0 0 15px 0;
+}
+form .form__wrapper textarea.error {
+  border: 2px solid #c6202b;
 }
 
 /** responsive **/
@@ -703,6 +874,24 @@ div.footer__wrapper .footer nav.footerbar--nav ul.footerbar--ul li.footerbar--li
 }
 /* (1360px above)----------- */
 /* (1900px above)----------- */
+button {
+  font-family: 'avantgardef';
+  padding: 10px 25px;
+}
+button.send--button {
+  float: right;
+  color: #fdfdfc;
+  letter-spacing: 2px;
+  background: #8c8c88;
+  border: 1px solid #4c4c4a;
+  font-weight: bold;
+}
+button.send--button:hover {
+  background: #4c4c4a;
+}
+
+/** responsive **/
+/* (1024px above)----------- */
 .main {
   display: inline-block;
   margin: 0 auto;

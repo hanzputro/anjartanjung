@@ -7,10 +7,11 @@
 
 // partials
 @import "partials/typography";
-// @import "partials/form";
+@import "partials/form";
 @import "partials/mixin";
 @import "partials/header";
 @import "partials/footer";
+@import "partials/button";
 
 // page
 @import "pages/home";
