@@ -1,19 +1,30 @@
 
-// home page
-.main{
+// post page
+.post__blog{
   display: inline-block;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
   // width:950px;
-  	.main__slider{
-  		ul.main__slider--ul{
-  			margin:0 auto;
-  			li.main__slider--li{
-  				.main__slider--img{
-
-  				}
-  			}
-  		}
+  	ul.post__blog--ul{
+        display: inline-block;
+        width:660px;
+        margin:0 auto;
+        list-style: none;
+    		li.post__blog--li{
+            margin:0 auto 50px auto;    			
+      			ul.post__blog__img--ul{
+                list-style: none;
+                margin:20px auto 2px auto;
+                li.post__blog__img--li{
+                    display: inline-flex;
+                    margin:0 auto 8px auto;
+                    img.post__blog__img--img{
+                        min-width:100%;
+                        float:left;
+                    }                    
+                }
+            }
+    		}
   	}
 }
 
