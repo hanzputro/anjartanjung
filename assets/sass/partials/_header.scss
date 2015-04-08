@@ -11,20 +11,24 @@
       margin:0 auto 0px auto;          
       padding: 0;
         .logo__header{
-          background: url("../images/logo.png") no-repeat;
+          // background: url("../images/logo.png") no-repeat;
           width:533px;
           height:116px;
           margin:50px auto 35px auto;
         }
-        nav.menubar--nav{
+        nav.menubar--nav,
+        .menu-new-menu-container{
           margin: 0 auto 35px auto;
-            ul.menubar--ul{
+            ul.menubar--ul,
+            .menu{
               display: inline-block;
               margin:0;
-                li.menubar--li{
+                li.menubar--li,
+                .menu-item{
                   display: inline-block;
                   float:left;
                   margin: 0 40px 0 0;
+                    a,
                     a.menubar--a{
                       @include delay(0.2s);
                       display: block;
@@ -44,7 +48,8 @@
                       }
                     }
                 }
-                li.menubar--li:last-child{
+                li.menubar--li:last-child,
+                .menu-item:last-child{
                   margin-right:0;
                 }
             }

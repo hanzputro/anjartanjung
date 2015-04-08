@@ -1,5 +1,5 @@
 
-<?php include("includes/header.php"); ?>
+<?php get_header(); ?>
 	
 	<div class="main__wrapper">
 		<div class="main">
@@ -23,5 +23,5 @@
 
 </div><!-- /container -->
 		
-<?php include("includes/footer.php"); ?>
+<?php get_footer(); ?>
 		
