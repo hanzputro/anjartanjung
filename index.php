@@ -3,13 +3,14 @@
 	
 	<div class="main__wrapper">
 		<div class="main">
-			<div class="main__slider">
+			<!-- <div class="main__slider">
 	    		<ul class="main__slider--ul">
 	    			<li class="main__slider--li">
 	    				<img class="main__slider--img" src="assets/images/main_slider/main_slider-img1.jpg" alt="">
 	    			</li>
 	    		</ul>
-	    	</div>
+	    	</div> -->
+	    	<?php echo slider_template(); ?>
 	    	<br>
 	    	<div class="note">
 	    		<center><p>

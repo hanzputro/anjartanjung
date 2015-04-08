@@ -2,19 +2,19 @@
 
 // Enqueue Flexslider Files
 
-	function wptuts_slider_scripts() {
+	function slider_scripts() {
 		wp_enqueue_script( 'jquery' );
 	
 		wp_enqueue_style( 'flex-style', get_template_directory_uri() . '/style.css' );
 	
 		wp_enqueue_script( 'flex-script', get_template_directory_uri() .  '/assets/js/vendor/jquery.flexslider-min.js', array( 'jquery' ), false, true );
 	}
-	add_action( 'wp_enqueue_scripts', 'wptuts_slider_scripts' );
+	add_action( 'wp_enqueue_scripts', 'slider_scripts' );
 
 
 // Initialize Slider
 	
-	function wptuts_slider_initialize() { ?>
+	function slider_initialize() { ?>
 		<script type="text/javascript" charset="utf-8">
 			jQuery(window).load(function() {
 			  jQuery('.flexslider').flexslider({
@@ -26,12 +26,12 @@
 			});
 		</script>
 	<?php }
-	add_action( 'wp_head', 'wptuts_slider_initialize' );
+	add_action( 'wp_head', 'slider_initialize' );
 	
 	
 // Create Slider
 	
-	function wptuts_slider_template() {
+	function slider_template() {
 		
 		// Query Arguments
 		$args = array(
@@ -55,15 +55,15 @@
 					<li>
 					
 					<?php // Check if there's a Slide URL given and if so let's a link to it
-					if ( get_post_meta( get_the_id(), 'wptuts_slideurl', true) != '' ) { ?>
-						<a href="<?php echo esc_url( get_post_meta( get_the_id(), 'wptuts_slideurl', true ) ); ?>">
+					if ( get_post_meta( get_the_id(), 'slideurl', true) != '' ) { ?>
+						<a href="<?php echo esc_url( get_post_meta( get_the_id(), 'slideurl', true ) ); ?>">
 					<?php }
 					
 					// The Slide's Image
 					echo the_post_thumbnail();
 					   
 					// Close off the Slide's Link if there is one
-					if ( get_post_meta( get_the_id(), 'wptuts_slideurl', true) != '' ) { ?>
+					if ( get_post_meta( get_the_id(), 'slideurl', true) != '' ) { ?>
 						</a>
 					<?php } ?>
 					
@@ -81,10 +81,10 @@
 
 // Slider Shortcode
 
-	function wptuts_slider_shortcode() {
+	function slider_shortcode() {
 		ob_start();
-		wptuts_slider_template();
+		slider_template();
 		$slider = ob_get_clean();
 		return $slider;
 	}
-	add_shortcode( 'slider', 'wptuts_slider_shortcode' );
+	add_shortcode( 'slider', 'slider_shortcode' );
