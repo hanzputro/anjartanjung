@@ -20,10 +20,10 @@
 				cursor: pointer;
 				text-align: center;
 				.portfolio--img{
-					@include scale (1.03);
+					@include scale (1.1);
 					@include delay(0.4s);
 					display: inline-block;				
-					  background-size: 100% 100% !important;
+					// background-size: cover;
 					background-position: top center;
 					background-repeat: no-repeat;
 					background-color:#edbda1;
@@ -33,7 +33,7 @@
 			}
 			&:hover{
 				a .portfolio--img{
-					@include scale (1.1);
+					@include scale (1.02);
 				}						
 			}
 		}
