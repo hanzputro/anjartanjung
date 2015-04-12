@@ -13,7 +13,8 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<title>Anjar Tanjung Website</title>
+	<!-- <title><?php wp_title( '|', true, 'right' ); ?></title> -->
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 	<!-- <meta name="author" content="" />
@@ -50,6 +51,9 @@
 						<li class="menubar--li"><a href="blog.php" class="menubar--a">BLOG</a></li>
 					</ul>
 				</nav>	 -->
+				<div class="responsive__wrapper">
+					<p class="ag">MENU</p>
+				</div>
 				<?php wp_nav_menu( array('menu' => 'New Menu' )); ?>	
 			</div>			
 		</div>

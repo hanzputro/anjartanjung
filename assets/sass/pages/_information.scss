@@ -4,7 +4,7 @@
 	display: block;
 	.information__left{
 		float:left;
-		width:44%;
+		// width:44%;
 		margin:0 4% 0 0;
 		img.information__left--img{
 			min-width:100%;
@@ -12,7 +12,7 @@
 	}
 	.information__right{
 		float:left;
-		width:52%;
+		// width:52%;
 		text-align:left;
 		p{
 			letter-spacing: 0.9px;
@@ -25,6 +25,12 @@
 /* (0px above)----------- */
 @media only screen 
 and (min-width : 0px) {
+	.information__left{
+		display: none;
+	}
+	.information__right{
+		width:100%;
+	}
 }
 
 /* (480px above)----------- */
@@ -35,6 +41,13 @@ and (min-width : 480px) {
 /* (768px above)----------- */
 @media only screen 
 and (min-width : 768px) {
+	.information__left{
+		display: inline-block;
+		width:44%;
+	}
+	.information__right{
+		width:52%;
+	}
 }
 
 /* (1024px above)----------- */

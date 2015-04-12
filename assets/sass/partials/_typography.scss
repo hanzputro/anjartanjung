@@ -44,7 +44,7 @@ h2 {
         margin:10px 0 -10px 0;
         font{
             font-family: 'cacchampagne';
-            font-size:18px;
+            font-size:34px;
         }
     }
 }
@@ -72,14 +72,28 @@ h2 {
 // }
 p {
     font-size: 15px;
-    line-height:21px;
+    line-height:22px;
     color:#76787A;
     letter-spacing: 0.3px;
     margin:0;
     // text-shadow:
     // 0 0 0px #eeeeee, 0 0 0px #eeeeee, 
     // 0 0 0px #eeeeee, 0 0 0px #eeeeee,
-    // 0 0 0px #eeeeee, 0 0 0px #eeeeee; 
+    // 0 0 0px #eeeeee, 0 0 0px #eeeeee;
+    &.ag{
+        font-family: 'avantgardef';
+        font-size: 12px;
+        color:#53565a;
+        letter-spacing: 1px;
+        font-weight: bold;        
+    }
+    &.login__info__text{
+        font-size: 14px;
+            a{
+                display: inline-block;
+                font-size:14px;
+            }
+    } 
 }
 small {
     font-size: 11px;

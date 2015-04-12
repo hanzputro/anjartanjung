@@ -1,8 +1,8 @@
 
 // button
-button{
+button, input[type="submit"]{
     font-family: 'avantgardef';
-    padding:10px 25px;
+    padding:10px 25px;    
     &.send--button{
         float:right;
         color:#fdfdfc;
@@ -10,6 +10,7 @@ button{
         background:#8c8c88;
         border:1px solid #4c4c4a;
         font-weight: bold;
+        margin:10px 0 0 0;
         &:hover{
             background:#4c4c4a;
         }

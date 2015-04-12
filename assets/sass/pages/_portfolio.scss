@@ -1,30 +1,33 @@
 
 // portfolio page
 .portfolio--img{
-	width:318px;
-	height:256px;
+	// width:318px;
+	// height:256px;
 }
 
 .portfolio{
+	display:inline-block;
+	width:100%;
 	ul.portfolio--ul{
-		@include column(3, 0%, 0%);
-		width:985px;
+		display: inline-block;
+		// width:985px;
 		margin:0 auto;
 		li.portfolio--li{
-			@include noflicker();
-			display: block;
-			margin-bottom:5%;		
+			display: inline-block;
+			float:left;
+			// width:32.62%;
+			height:auto;				
 			a.portfolio--a{
 				display: block;
 				overflow: hidden;
 				cursor: pointer;
 				text-align: center;
 				.portfolio--img{
-					@include scale (1.1);
+					// @include scale (1.03);
 					@include delay(0.4s);
 					display: inline-block;				
-					// background-size: cover;
-					background-position: top center;
+					background-size: 100% 100% !important;
+					background-position: 50% 50%;
 					background-repeat: no-repeat;
 					background-color:#edbda1;
 					float: center;
@@ -33,10 +36,10 @@
 			}
 			&:hover{
 				a .portfolio--img{
-					@include scale (1.02);
+					// @include scale (1.1);
 				}						
 			}
-		}
+		}	
 	}
 }
 
@@ -45,21 +48,79 @@
 /* (0px above)----------- */
 @media only screen 
 and (min-width : 0px) {
+	.portfolio--img{
+		width:318px;
+		height:256px;
+	}
+	ul.portfolio--ul{
+		width:100%;
+	}
+	li.portfolio--li{
+		width: 100%;
+		margin:0 0 1% 0;
+		a .portfolio--img{
+			@include scale (1.03);
+		}
+	}
 }
 
 /* (480px above)----------- */
 @media only screen 
-and (min-width : 480px) {
+and (min-width : 481px) {
+	.portfolio--img{
+		width:270px;
+		height:217px;
+	}
+	li.portfolio--li{
+		width: 49%;
+		margin:0 1% 1% 0;
+		a .portfolio--img{
+			@include scale (1.03);
+		}
+	}
 }
 
 /* (768px above)----------- */
 @media only screen 
 and (min-width : 768px) {
+	.portfolio--img{
+		width:248px;
+		height:200px;
+	}
+	li.portfolio--li{
+		width: 32.3%;
+		a .portfolio--img{
+			@include scale (1.03);
+		}
+		&:hover{
+			a .portfolio--img{
+				@include scale (1.1);
+			}						
+		}
+	}
 }
 
 /* (1024px above)----------- */
 @media only screen 
 and (min-width : 1024px) {
+	.portfolio--img{
+		width:318px;
+		height:256px;
+	}
+	ul.portfolio--ul{
+		width:985px;
+	}
+	li.portfolio--li{
+		width: 32.3%;
+		a .portfolio--img{
+			@include scale (1.03);
+		}
+		&:hover{
+			a .portfolio--img{
+				@include scale (1.1);
+			}						
+		}
+	}
 }
 
 /* (1360px above)----------- */
