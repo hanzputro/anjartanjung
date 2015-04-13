@@ -15,9 +15,10 @@ add_action( 'wp_enqueue_scripts', 'theme_setup' );
 function js_setup() { 
   wp_register_script( 'jquery','','');
   wp_register_script('jquery2', get_template_directory_uri().'/assets/js/jquery-1.11.1.js', '', '') ;
+  wp_register_script('venobox', get_template_directory_uri().'/assets/js/vendor/venobox.js', '', '') ;
   wp_register_script('scripts', get_template_directory_uri().'/assets/js/partial/scripts.js', '', '') ;
 
-  wp_enqueue_script( array('jquery', 'jquery2', 'scripts'));   
+  wp_enqueue_script( array('jquery', 'jquery2', 'venobox', 'scripts'));   
 }  
 add_action('wp_enqueue_scripts', 'js_setup');
 
@@ -54,7 +55,7 @@ require( get_template_directory() . '/slider/slider.php' );
 
 
 /*********************************************************/
-/*               Gallery Portfolio setup                 */
+/*                   Gallery setup                       */
 /*********************************************************/
 remove_shortcode('gallery', 'gallery_shortcode');
 add_shortcode('gallery', 'custom_gallery');

@@ -13,6 +13,7 @@
 		// width:985px;
 		margin:0 auto;
 		li.portfolio--li{
+			@include delay (0.3s all);
 			display: inline-block;
 			float:left;
 			// width:32.62%;
@@ -35,11 +36,12 @@
 				}
 			}
 			&:hover{
+				opacity:1 !important;
 				a .portfolio--img{
 					// @include scale (1.1);
 				}						
-			}
-		}	
+			}			
+		}
 	}
 }
 

@@ -15,12 +15,12 @@ Template Name: Portfolio Page
                 while ( have_posts() ) : the_post();
                     if ( get_post_gallery() ) :
                         $gallery = get_post_gallery( get_the_ID(), false );
-                        
+                        $image_attributes = wp_get_attachment_image_src( $attachment_id );
                         /* Loop through all the image and output them one by one */
                         foreach( $gallery['src'] AS $src ){
                             ?>
                             <li class="portfolio--li">
-                                <a href="" class="portfolio--a">
+                                <a href="<?php echo $src; ?>" class="portfolio--a venobox" data-gall="myGallery">
                                    <div class="portfolio--img" style="background:url('<?php echo $src; ?>') no-repeat" alt=""> 
                                    </div>
                                 </a>                    

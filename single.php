@@ -1,9 +1,3 @@
-<?php
-/*
-Template Name: Blog Page
-*/
-?>
-
 <?php get_header(); ?>
 	
 	<div class="main__wrapper">
@@ -24,7 +18,7 @@ Template Name: Blog Page
 	                <br>
 	                <div class="box__comment__show">
                         <div class="box__comment__show--left">
-                            <a href=""><p class="ag">COMMENT</p></a>
+                            <a><p class="ag">COMMENT</p></a>
                         </div>                        
                         <div class="box__comment__show--right">
                             <p class="ag">SHARE THIS POST</p>
