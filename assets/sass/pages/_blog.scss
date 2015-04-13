@@ -35,7 +35,7 @@
                 .box__comment__show--left{
                   display: inline-block;
                   float:left;
-                  width:49%;
+                  // width:49%;
                   text-align: left;
                   padding:0 0 0 1%;
                     a{
@@ -48,11 +48,13 @@
                 .box__comment__show--right{
                   display: inline-block;
                   float:right;
-                  width:49%;
+                  width:280px;
                   text-align: left;
                   padding:0 0 0 1%;
                     p{
-                      display: inline-block;                 
+                      float:left;
+                      display: inline-block;
+                      margin-right:5px;                 
                     }
                     ul.share__post--ul{
                       display: inline-block;

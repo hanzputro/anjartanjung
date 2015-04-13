@@ -73,15 +73,34 @@ body {
   // height:100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  &:before{
+    content: "";
+    position:absolute;
+    top:0;
+    left:0;
+    width:294px;
+    height:100%;
+    background:url(assets/images/left-bg.png) repeat-y;
+  }
+  &:after{
+    content: "";
+    position:absolute;
+    top:0;
+    right:0;
+    width:309px;
+    height:100%;
+    background:url(assets/images/right-bg.png) repeat-y;
+  }
 }
 
 .container{
-  // position: relative;
+  position: relative;
   // width:985px;
   overflow:hidden;
   margin:0 auto;
   padding:0 0 70px 0;
-  text-align: center; 
+  text-align: center;
+  z-index:1; 
 }
 
 div.container__main{

@@ -1,149 +1,105 @@
 /* icons */
 
-span{
-    display: inline-block;
+.social-icons-wrap{
+    float:right;
 }
-.logo--midplazaholding__large{  
-    width:164px;
-    height:50px;
-    background:url('../images/midplazaholding__large--logo.png') no-repeat center center;
-}
-.logo--midplazaholding{  
-    width:128px;
-    height:40px;    
-    background:url('../images/midplazaholding--logo.png') no-repeat center center;
-}
-
-.logo--menu{  
-    width:28px;
-    height:18px;
-    background:url('../images/logo--menu.png') no-repeat;
-}
-
-// sosmed
-.icon--sosmed{
-    width:30px; 
-    height:30px;
-    opacity:0.6;
-    @include delay (.3s all);
-    &:hover{
-        opacity:1;
-    }
-}
-.icon--fb__sosmed{
-    background:url('../images/sosmed__fb--icon.png') no-repeat;
-    @extend .icon--sosmed;    
-}
-.icon--twit__sosmed{
-    background:url('../images/sosmed__twit--icon.png') no-repeat;
-    @extend .icon--sosmed;
-}
-.icon--in__sosmed{
-    background:url('../images/sosmed__in--icon.png') no-repeat;
-    @extend .icon--sosmed;
-}
-
-//breadcrumb
-.icon--breadcrumb{
-    width:20px; 
-    height:20px;
-    opacity:0.6;
-    @include delay (.3s all);
-    &:hover{
-        opacity:1;
-    }
-}
-.icon--home__breadcrumb{
-    background:url('../images/home__breadcrumb--icon.png') no-repeat;
-    @extend .icon--breadcrumb;    
-}
-.icon--arrow__breadcrumb{
-    background:url('../images/arrow__breadcrumb--icon.png') no-repeat;
-    @extend .icon--breadcrumb;
-    opacity:1;
-}
-//filtericon
-.icon--filter{
-    width:23px; 
-    height:22px;
-    @include delay (.3s all);    
-}
-.icon--grid__filter{
-    background:url('../images/grid--icon.png') no-repeat;
-    @extend .icon--filter;
-    // &:hover{
-    //     background:url('../images/grid__hover--icon.png') no-repeat;
-    // }
-}
-.icon--list__filter{
-    background:url('../images/list--icon.png') no-repeat;
-    @extend .icon--filter;
-    // &:hover{
-    //     background:url('../images/list__hover--icon.png') no-repeat;
-    // }
-}
-.icon--search__filter{
-    background:url('../images/search--icon.png') no-repeat;
-    @extend .icon--filter;
-}
-
-/* Icon Hamburger */
-#hamburger--icon{
-    position:absolute;
-    top: 7px;
-    right: 0px;
-    // margin-left: -95px;
-    width: 60px;
-    height: 45px;
-    cursor: pointer;
-    z-index: 300;
-    // position: relative;
-    // margin: 50px auto;
-    @include rotate (0deg);
-    @include delay (.5s ease-in-out);    
-    // @include scale (0.4);
-        span{
-            display: block;
-            position: absolute;
-            height: 4px;
-            width: 100%;
-            background: #fff;
-            // border-radius: 9px;
-            opacity: 1;
-            left: 0;
-            @include rotate (0deg);
-            @include delay (.25s ease-in-out);
+.social-icons {
+    margin:0;
+    li {
+        position:relative;
+        list-style-type: none !important;
+        float:left;
+        height:20px !important;
+        margin:0 5px 0 0;
+        font-size: 10px !important;
+        font-weight: bold !important;
+        &:last-child {
+            margin-right: 0 !important;
         }
+        a{
+            padding: 3px 15px 3px 15px;
+            // -webkit-border-top-left-radius: 3px;
+            // border-top-left-radius: 3px;
+            // -webkit-border-bottom-left-radius: 3px;
+            // border-bottom-left-radius: 3px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+            text-decoration: none;
+        }
+    } 
 }
-#hamburger--icon span:nth-child(1) {
-  top: 0px;
-}
-#hamburger--icon span:nth-child(2),
-#hamburger--icon span:nth-child(3) {
-  top: 18px;
-}
-#hamburger--icon span:nth-child(4) {
-  top: 36px;
-}
-#hamburger--icon.open span:nth-child(1) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
-}
-#hamburger--icon.open span:nth-child(2) {
-    @include rotate (45deg);
-}
-#hamburger--icon.open span:nth-child(3) {
-    @include rotate (-45deg);
-}
-#hamburger--icon.open span:nth-child(4) {
-  top: 18px;
-  width: 0%;
-  left: 50%;
-}
+
+// .share-count {
+//     position: absolute;
+//     top: 0;
+//     right: 0;    
+//     padding: 4px 10px;
+//     margin-right:-27px;
+//     border-left: 0 !important;
+//     // -webkit-border-top-right-radius: 3px;
+//     // border-top-right-radius: 3px;
+//     // -webkit-border-bottom-right-radius: 3px;
+//     // border-bottom-right-radius: 3px;    
+//     font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+// }
+ 
+// /* Facebook Button Styling */
+// li.social-icon.facebook{
+//     a {
+//         border-top: 1px solid #3b5998;
+//         border-left: 1px solid #3b5998;
+//         border-bottom: 1px solid #3b5998;
+//         background-color: #3b5998;
+//         color: white; //#3b5998;        
+//         &:hover {
+//             // background-color: #3b5998;
+//             // color: white;
+//         }
+//     }
+//     span{
+//         border: 1px solid #3b5998;
+//         color: #3b5998;
+//     }
+// }
+ 
+// /* Twitter Button Styling */
+// li.social-icon.twitter{
+//     a {
+//         border-top: 1px solid #55acee;
+//         border-left: 1px solid #55acee;
+//         border-bottom: 1px solid #55acee;
+//         background-color: #55acee;
+//         color: white; //#55acee;
+//         &:hover {
+//             // background-color: #55acee;
+//             // color: white;
+//         }
+//     }
+//     span{
+//         border: 1px solid #55acee;
+//         color: #55acee;
+//     }
+// }
+ 
+// /* Google+ Button Styling */
+// li.social-icon.google-plus{
+//     a {
+//         border-top: 1px solid #dd4b39;
+//         border-left: 1px solid #dd4b39;
+//         border-bottom: 1px solid #dd4b39;
+//         color: white; //#dd4b39;
+//         background-color: #dd4b39;
+//         &:hover {
+//             // background-color: #dd4b39;
+//             // color: white;
+//         } 
+//     }
+//     span{
+//         border: 1px solid #dd4b39;
+//         color: #dd4b39;
+//     }
+// }
 
 /** responsive **/
-
 /* (0px above)----------- */
 @media only screen 
 and (min-width : 0px) {
@@ -151,7 +107,6 @@ and (min-width : 0px) {
         @include scale (0.4);
     }
 }
-
 /* (1024px above)----------- */
 @media only screen 
 and (min-width : 1024px) {

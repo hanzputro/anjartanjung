@@ -126,11 +126,12 @@ function custom_gallery($attr) {
   $output = apply_filters( 'gallery_style', $gallery_style . "\n\t\t" . $gallery_div );  
 
   foreach ( $attachments as $id => $attachment ) {
-    $link = wp_get_attachment_link($id, 'full', true, false);
+    // $link = wp_get_attachment_link($id, 'full', true, false); //get hyperlink for images gallery
+    $link = wp_get_attachment_url($attachment->ID); //get src path img
     $output .= "<div class='homepage-gallery-item'>";
     $output .= "
-      <div class='homepage-gallery-icon'>
-        $link
+      <div class='homepage-gallery-icon'>        
+          <img src='$link'/>
       </div>";
 
     if ( $captiontag && trim($attachment->post_excerpt) ) {
@@ -221,3 +222,133 @@ function add_custom_comment_field( $comment_id ) {
     add_comment_meta( $comment_id, 'my_custom_comment_field', $_POST['my_custom_comment_field'] );
 }
 add_action( 'comment_post', 'add_custom_comment_field' );
+
+
+/*********************************************************/
+/*               Social Media Share Setup                */
+/*********************************************************/
+function ds_post_tweet_count( $post_id ) { 
+  // Check for transient
+  if ( ! ( $count = get_transient( 'ds_post_tweet_count' . $post_id ) ) ) { 
+    // Do API call
+    $response = wp_remote_retrieve_body( wp_remote_get( 'https://cdn.api.twitter.com/1/urls/count.json?url=' . urlencode( get_permalink( $post_id ) ) ) ); 
+    // If error in API call, stop and don't store transient
+    if ( is_wp_error( $response ) )
+      return 'error'; 
+    // Decode JSON
+    $json = json_decode( $response ); 
+    // Set total count
+    $count = absint( $json->count ); 
+    // Set transient to expire every 30 minutes
+    set_transient( 'ds_post_tweet_count' . $post_id, absint( $count ), 30 * MINUTE_IN_SECONDS ); 
+  } 
+ return absint( $count ); 
+}  /** Twitter End */
+ 
+ 
+/** Get like count from Facebook FQL  */ 
+function ds_post_like_count( $post_id ) { 
+  // Check for transient
+  if ( ! ( $count = get_transient( 'ds_post_like_count' . $post_id ) ) ) { 
+    // Setup query arguments based on post permalink
+    $fql  = "SELECT url, ";
+    //$fql .= "share_count, "; // total shares
+    //$fql .= "like_count, "; // total likes
+    //$fql .= "comment_count, "; // total comments
+    $fql .= "total_count "; // summed total of shares, likes, and comments (fastest query)
+    $fql .= "FROM link_stat WHERE url = '" . get_permalink( $post_id ) . "'"; 
+    // Do API call
+    $response = wp_remote_retrieve_body( wp_remote_get( 'https://api.facebook.com/method/fql.query?format=json&query=' . urlencode( $fql ) ) ); 
+    // If error in API call, stop and don't store transient
+    if ( is_wp_error( $response ) )
+      return 'error'; 
+    // Decode JSON
+    $json = json_decode( $response ); 
+    // Set total count
+    $count = absint( $json[0]->total_count ); 
+    // Set transient to expire every 30 minutes
+    set_transient( 'ds_post_like_count' . $post_id, absint( $count ), 30 * MINUTE_IN_SECONDS ); 
+  } 
+ return absint( $count ); 
+} /** Facebook End  */
+ 
+ 
+/** Get share count from Google Plus */ 
+function ds_post_plusone_count($post_id) { 
+  // Check for transient
+  if ( ! ( $count = get_transient( 'ds_post_plus_count' . $post_id ) ) ) {     
+      $args = array(
+              'method' => 'POST',
+              'headers' => array(
+                  // setup content type to JSON 
+                  'Content-Type' => 'application/json'
+              ),
+              // setup POST options to Google API
+              'body' => json_encode(array(
+                  'method' => 'pos.plusones.get',
+                  'id' => 'p',
+                  'method' => 'pos.plusones.get',
+                  'jsonrpc' => '2.0',
+                  'key' => 'p',
+                  'apiVersion' => 'v1',
+                  'params' => array(
+                      'nolog'=>true,
+                      'id'=> get_permalink( $post_id ),
+                      'source'=>'widget',
+                      'userId'=>'@viewer',
+                      'groupId'=>'@self'
+                  ) 
+               )),
+               // disable checking SSL sertificates               
+              'sslverify'=>false
+          );       
+      // retrieves JSON with HTTP POST method for current URL  
+      $json_string = wp_remote_post("https://clients6.google.com/rpc", $args);       
+      if (is_wp_error($json_string)){
+          // return zero if response is error                             
+          return "0";             
+      } else {        
+          $json = json_decode($json_string['body'], true);                    
+          // return count of Google +1 for requsted URL
+          $count = intval( $json['result']['metadata']['globalCounts']['count'] ); 
+      }      
+      // Set transient to expire every 30 minutes
+    set_transient( 'ds_post_plus_count' . $post_id, absint( $count ), 30 * MINUTE_IN_SECONDS );      
+  } 
+  return absint( $count );    
+} /** Google Plus End */ 
+
+ 
+/** Markup for Social Media Icons */ 
+function ds_social_media_icons() {  
+  // Get the post ID
+  $post_id = get_the_ID(); ?> 
+  <div class="social-icons-wrap">
+    <ul class="social-icons">
+
+      <!-- Facebook Button-->
+      <li class="social-icon facebook">        
+        <div class="fb-share-button" data-href="<?php the_permalink(); ?>" data-layout="button"></div>
+        <!-- <span class="share-count"><?php echo ds_post_like_count( $post_id ); ?></span> -->
+      </li>
+
+      <!-- Twitter Button -->
+      <li class="social-icon pinterest">      
+        <a href="//www.pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>" 
+        data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red">
+            <!-- <i class="fa fa-pinterest"></i> Tweet  --> 
+        </a>
+        <!-- <span class="share-count"><?php echo ds_post_tweet_count( $post_id ); ?></span> -->
+      </li>
+
+      <!-- Google + Button-->
+      <li class="social-icon google-plus">
+        <div class="g-plus" data-action="share" data-annotation="none" data-href="<?php the_permalink(); ?>"></div>
+        <!-- <a onclick="javascript:popupCenter('https://plus.google.com/share?url=<?php the_permalink(); ?>','Share on Google+', '600', '600');return false;" href="https://plus.google.com/share?url=<?php the_permalink(); ?>" target="blank">
+            <i class="fa fa-google-plus"></i> Google+
+        </a> -->
+          <!-- <span class="share-count"><?php echo ds_post_plusone_count( $post_id ); ?></span> -->
+      </li>
+    </ul>
+  </div><!-- .social-icons-wrap --> 
+<?php }

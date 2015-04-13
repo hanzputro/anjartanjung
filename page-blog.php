@@ -5,7 +5,17 @@ Template Name: Blog Page
 ?>
 
 <?php get_header(); ?>
-	
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.3&appId=1444827365810566";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 	<div class="main__wrapper">
 		<div class="post__blog">
     		<ul class="post__blog--ul">
@@ -66,17 +76,11 @@ Template Name: Blog Page
                         </div>                        
                         <div class="box__comment__show--right">
                             <p class="ag">SHARE THIS POST</p>
-                            <ul class="share__post--ul">
-                                <li class="share__post--li">
-                                    <a href=""><img src="" alt=""></a>
+                            <!-- <ul class="share__post--ul">
+                                <li class="share__post--li">                                    
                                 </li>
-                                <li class="share__post--li">
-                                    <a href=""><img src="" alt=""></a>
-                                </li>
-                                <li class="share__post--li">
-                                    <a href=""><img src="" alt=""></a>
-                                </li>
-                            </ul>
+                            </ul> -->
+                            <?php ds_social_media_icons(); ?>
                         </div>
                     </div>
                     <!-- comments -->

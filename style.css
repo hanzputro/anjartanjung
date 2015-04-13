@@ -1,3 +1,4 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 /*
 Theme Name: anjartanjung
 Description: A responsive theme for photography
@@ -578,6 +579,7 @@ input, textarea, select {
   background-color: #fff;
   color: #555;
   padding: 4px 5px;
+  border: 1px solid #a9a9a9;
   vertical-align: middle;
   font-size: 16px;
   -webkit-box-sizing: border-box;
@@ -1017,6 +1019,44 @@ button.send--button:hover, input[type="submit"].send--button:hover {
 
 /** responsive **/
 /* (1024px above)----------- */
+/* icons */
+.social-icons-wrap {
+  float: right;
+}
+
+.social-icons {
+  margin: 0;
+}
+.social-icons li {
+  position: relative;
+  list-style-type: none !important;
+  float: left;
+  height: 20px !important;
+  margin: 0 5px 0 0;
+  font-size: 10px !important;
+  font-weight: bold !important;
+}
+.social-icons li:last-child {
+  margin-right: 0 !important;
+}
+.social-icons li a {
+  padding: 3px 15px 3px 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+  text-decoration: none;
+}
+
+/** responsive **/
+/* (0px above)----------- */
+@media only screen and (min-width: 0px) {
+  #hamburger--icon {
+    -o-transform: scale(0.4);
+    -ms-transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    -webkit-transform: scale(0.4);
+    transform: scale(0.4);
+  }
+}
+/* (1024px above)----------- */
 .main {
   margin: 0 auto;
   text-align: left;
@@ -1298,7 +1338,6 @@ button.send--button:hover, input[type="submit"].send--button:hover {
 .post__blog ul.post__blog--ul li.post__blog--li .box__comment__show .box__comment__show--left {
   display: inline-block;
   float: left;
-  width: 49%;
   text-align: left;
   padding: 0 0 0 1%;
 }
@@ -1308,12 +1347,14 @@ button.send--button:hover, input[type="submit"].send--button:hover {
 .post__blog ul.post__blog--ul li.post__blog--li .box__comment__show .box__comment__show--right {
   display: inline-block;
   float: right;
-  width: 49%;
+  width: 280px;
   text-align: left;
   padding: 0 0 0 1%;
 }
 .post__blog ul.post__blog--ul li.post__blog--li .box__comment__show .box__comment__show--right p {
+  float: left;
   display: inline-block;
+  margin-right: 5px;
 }
 .post__blog ul.post__blog--ul li.post__blog--li .box__comment__show .box__comment__show--right ul.share__post--ul {
   display: inline-block;
@@ -2083,12 +2124,32 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 294px;
+  height: 100%;
+  background: url(assets/images/left-bg.png) repeat-y;
+}
+body:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 309px;
+  height: 100%;
+  background: url(assets/images/right-bg.png) repeat-y;
+}
 
 .container {
+  position: relative;
   overflow: hidden;
   margin: 0 auto;
   padding: 0 0 70px 0;
   text-align: center;
+  z-index: 1;
 }
 
 div.container__main {
