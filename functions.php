@@ -216,15 +216,6 @@ if (isset($_POST['send--button'])){
 
 
 /*********************************************************/
-/*                  Form Comment Setup                   */
-/*********************************************************/
-function add_custom_comment_field( $comment_id ) {
-    add_comment_meta( $comment_id, 'my_custom_comment_field', $_POST['my_custom_comment_field'] );
-}
-add_action( 'comment_post', 'add_custom_comment_field' );
-
-
-/*********************************************************/
 /*               Social Media Share Setup                */
 /*********************************************************/
 function ds_post_tweet_count( $post_id ) { 
@@ -334,8 +325,7 @@ function ds_social_media_icons() {
 
       <!-- Twitter Button -->
       <li class="social-icon pinterest">      
-        <a href="//www.pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>" 
-        data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red">
+        <a href="//www.pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red">
             <!-- <i class="fa fa-pinterest"></i> Tweet  --> 
         </a>
         <!-- <span class="share-count"><?php echo ds_post_tweet_count( $post_id ); ?></span> -->

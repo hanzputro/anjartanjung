@@ -1,4 +1,3 @@
-@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 /*! normalize.css v1.0.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -6,6 +5,7 @@
 /*
  * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 article,
 aside,
 details,
@@ -1065,7 +1065,6 @@ button.send--button:hover, input[type="submit"].send--button:hover {
   width: 100%;
 }
 .portfolio ul.portfolio--ul {
-  display: inline-block;
   margin: 0 auto;
 }
 .portfolio ul.portfolio--ul li.portfolio--li {
@@ -1335,7 +1334,7 @@ button.send--button:hover, input[type="submit"].send--button:hover {
 .post__blog ul.post__blog--ul li.post__blog--li .box__comment__show .box__comment__show--right {
   display: inline-block;
   float: right;
-  width: 280px;
+  width: 290px;
   text-align: left;
   padding: 0 0 0 1%;
 }
@@ -1355,6 +1354,15 @@ button.send--button:hover, input[type="submit"].send--button:hover {
 }
 .post__blog ul.post__blog--ul .gallery {
   margin: 10px 0;
+}
+.post__blog ul.post__blog--ul a {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 22px;
+  color: #76787A;
+}
+.post__blog ul.post__blog--ul a:hover {
+  color: #555;
 }
 
 .comment__toggle__wrapper {

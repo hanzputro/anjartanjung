@@ -5,16 +5,6 @@ Template Name: Blog Page
 ?>
 
 <?php get_header(); ?>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.3&appId=1444827365810566";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 	<div class="main__wrapper">
 		<div class="post__blog">
@@ -48,17 +38,24 @@ Template Name: Blog Page
                 </div>
                  -->
 
-                 
-                <!-- post content -->
                 <?php
-                $args = array( 'posts_per_page' => 5 );
+                // set the "paged" parameter (use 'page' if the query is on a static front page)
+                $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-                $myposts = get_posts( $args );
-                foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+                // the query
+                $the_query = new WP_Query( 'cat=1&paged=' . $paged ); 
+                ?>
+
+                <?php if ( $the_query->have_posts() ) : ?>
+
+                <?php
+                // the loop
+                while ( $the_query->have_posts() ) : $the_query->the_post(); 
+                ?>
                 
                 <li class="post__blog--li">
                     <!-- title -->
-                    <h2 class="lt"><font><?php the_title(); ?></font></h2>
+                    <a href="<?php echo get_permalink( $nextID ); ?>"><h2 class="lt"><font><?php the_title(); ?></font></h2></a>
                     <!-- date -->
                     <small class="post__date"><?php the_date(); ?></small>
                     <!-- <ul class="post__blog__img--ul">
@@ -88,8 +85,25 @@ Template Name: Blog Page
                         <?php comments_template(); ?>
                     </div>                    
                 </li>
-                <?php endforeach; 
-                wp_reset_postdata();?>
+                
+                <?php endwhile; ?>
+
+                <?php
+
+                // next_posts_link() usage with max_num_pages
+                next_posts_link( 'Older Entries', $the_query->max_num_pages );
+                previous_posts_link( 'Newer Entries' );
+                ?>
+
+                <?php 
+                // clean up after the query and pagination
+                wp_reset_postdata(); 
+                ?>
+
+                <?php else:  ?>
+                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+                <?php endif; ?>
+
     		</ul>    		
 		</div>    	
 	</div>

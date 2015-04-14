@@ -1,0 +1,97 @@
+
+// pagination
+   
+ul.page-numbers {
+    list-style: none;
+    margin: 0;
+}
+
+.page-numbers:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+ul.page-numbers li {
+    display: block;
+    float: left;
+    margin: 0 4px 4px 0;
+    text-align: center;
+}
+
+.page-numbers a,
+.page-numbers span {
+    line-height: 1.6em;
+    display: block;
+    padding: 0 6px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 400;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    color: #888;
+}
+
+.page-numbers a span { padding: 0 }
+
+.page-numbers a:hover,
+.page-numbers.current,
+.page-numbers.current:hover {
+    color: #000;
+    background: #f7f7f7;
+    text-decoration: none;
+}
+
+.page-numbers:hover { text-decoration: none }
+
+/** responsive **/
+
+/* (0px above)----------- */
+@media only screen 
+and (min-width : 0px) {
+  .header__wrapper{
+    margin:0 auto 15px auto;
+  }
+  .logo__header{
+    width:80%;
+    margin:20px auto 20px auto;
+  }
+  .menu-header-menu-container{
+    display: none;
+  }
+  .menu{
+    width:100%;
+  }
+  li.menubar--li,
+  .menu-item{
+    width:100%;
+    margin: 0 0 1px 0;
+    padding:7px 0;
+    background:#f9f9f9;
+  }
+}
+
+/* (768px above)----------- */
+@media only screen 
+and (min-width : 768px) {
+}
+
+/* (1024px above)----------- */
+@media only screen 
+and (min-width : 1024px) {
+}
+
+/* (1360px above)----------- */
+@media only screen 
+and (min-width : 1360px) {
+}
+
+/* (1440px above)----------- */
+@media only screen 
+and (min-width : 1900px) {
+}
