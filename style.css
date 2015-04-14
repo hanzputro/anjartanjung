@@ -1,3 +1,4 @@
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 /*
 Theme Name: anjartanjung
 Description: A responsive theme for photography
@@ -17,7 +18,6 @@ Tags: photography, anjartanjung, wordpress theme
 /*
  * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 article,
 aside,
 details,
@@ -1338,7 +1338,6 @@ button.send--button:hover, input[type="submit"].send--button:hover {
   display: inline-block;
   float: left;
   text-align: left;
-  padding: 0 0 0 1%;
 }
 .post__blog ul.post__blog--ul li.post__blog--li .box__comment__show .box__comment__show--left a {
   display: inline-block;
@@ -1346,13 +1345,11 @@ button.send--button:hover, input[type="submit"].send--button:hover {
 .post__blog ul.post__blog--ul li.post__blog--li .box__comment__show .box__comment__show--right {
   display: inline-block;
   float: right;
-  width: 290px;
   text-align: left;
   padding: 0 0 0 1%;
 }
 .post__blog ul.post__blog--ul li.post__blog--li .box__comment__show .box__comment__show--right p {
   float: left;
-  display: inline-block;
   margin-right: 5px;
 }
 .post__blog ul.post__blog--ul li.post__blog--li .box__comment__show .box__comment__show--right ul.share__post--ul {
@@ -1370,11 +1367,12 @@ button.send--button:hover, input[type="submit"].send--button:hover {
 .post__blog ul.post__blog--ul a {
   font-size: 15px;
   font-weight: bold;
+  letter-spacing: 1px;
   line-height: 22px;
-  color: #76787A;
+  color: #53565a;
 }
 .post__blog ul.post__blog--ul a:hover {
-  color: #555;
+  color: #444547;
 }
 
 .comment__toggle__wrapper {
@@ -1427,11 +1425,34 @@ button.send--button:hover, input[type="submit"].send--button:hover {
 /** responsive **/
 /* (0px above)----------- */
 @media only screen and (min-width: 0px) {
+  .box__comment__show--left {
+    padding: 0;
+  }
+
+  .box__comment__show--right {
+    width: 177px;
+  }
+  .box__comment__show--right p.ag {
+    display: none;
+  }
+
   ul.post__blog--ul {
     width: 90%;
   }
 }
 /* (480px above)----------- */
+@media only screen and (min-width: 480px) {
+  .box__comment__show--left {
+    padding: 0 0 0 1%;
+  }
+
+  .box__comment__show--right {
+    width: 285px;
+  }
+  .box__comment__show--right p.ag {
+    display: inline-block;
+  }
+}
 /* (768px above)----------- */
 @media only screen and (min-width: 768px) {
   ul.post__blog--ul {

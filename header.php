@@ -22,6 +22,12 @@
 	<!-- <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png"> -->
 	<!-- Custom css -->
 	<!-- <link type="text/css" rel="stylesheet" href="assets/css/styles.css"/> -->
+		
+
+	<?php wp_head(); ?>
+</head>
+
+<body>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
 	<div id="fb-root"></div>	
@@ -31,12 +37,7 @@
 	  js = d.createElement(s); js.id = id;
 	  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.3&appId=1444827365810566";
 	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>	
-
-	<?php wp_head(); ?>
-</head>
-
-<body>
+	}(document, 'script', 'facebook-jssdk'));</script>
 	<!-- <?php body_class(); ?> -->
 	<!-- overlay blur -->
 	<!-- <div class="overlay__blur"></div> -->

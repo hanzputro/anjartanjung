@@ -325,7 +325,8 @@ function ds_social_media_icons() {
 
       <!-- Twitter Button -->
       <li class="social-icon pinterest">      
-        <a href="//www.pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red">
+        <a href="//www.pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>" 
+          data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red">
             <!-- <i class="fa fa-pinterest"></i> Tweet  --> 
         </a>
         <!-- <span class="share-count"><?php echo ds_post_tweet_count( $post_id ); ?></span> -->

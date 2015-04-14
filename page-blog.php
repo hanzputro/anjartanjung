@@ -9,34 +9,6 @@ Template Name: Blog Page
 	<div class="main__wrapper">
 		<div class="post__blog">
     		<ul class="post__blog--ul">
-				<!-- 
-                <?php
-                $postlist = get_posts( 'sort_column=menu_order&sort_order=asc' );
-                $posts = array();
-                foreach ( $postlist as $post ) {
-                   $posts[] += $post->ID;
-                }
-
-                $current = array_search( get_the_ID(), $posts );
-                $prevID = $posts[$current-1];
-                $nextID = $posts[$current+1];
-                ?>
-
-                <div class="navigation">
-                    <?php if ( !empty( $prevID ) ): ?>
-                    <div class="alignleft">
-                        <a href="<?php echo get_permalink( $prevID ); ?>"
-                        title="<?php echo get_the_title( $prevID ); ?>">Previous</a>
-                    </div>
-                    <?php endif;
-                    if ( !empty( $nextID ) ): ?>
-                        <div class="alignright">
-                            <a href="<?php echo get_permalink( $nextID ); ?>" 
-                            title="<?php echo get_the_title( $nextID ); ?>">Next</a>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                 -->
 
                 <?php
                 // set the "paged" parameter (use 'page' if the query is on a static front page)
@@ -57,7 +29,7 @@ Template Name: Blog Page
                     <!-- title -->
                     <a href="<?php echo get_permalink( $nextID ); ?>"><h2 class="lt"><font><?php the_title(); ?></font></h2></a>
                     <!-- date -->
-                    <small class="post__date"><?php the_date(); ?></small>
+                    <small class="post__date"><?php the_time(get_option('date_format')); ?></small>
                     <!-- <ul class="post__blog__img--ul">
                         <li class="post__blog__img--li">
                             <img src="assets/images/post/post-img2.jpg" alt="" class="post__blog__img--img">
