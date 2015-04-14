@@ -122,16 +122,16 @@ function custom_gallery($attr) {
 
   if ( apply_filters( 'use_default_gallery_style', true ) )
     $gallery_style = "<!-- see gallery_shortcode() in functions.php -->";
-  $gallery_div = "<div id='homepage-gallery-wrap' class='gallery gallery-columns-1 gallery-size-full'>";
-  $output = apply_filters( 'gallery_style', $gallery_style . "\n\t\t" . $gallery_div );  
+    $gallery_div = "<div id='homepage-gallery-wrap' class='gallery gallery-columns-1 gallery-size-full'>";
+    $output = apply_filters( 'gallery_style', $gallery_style . "\n\t\t" . $gallery_div );  
 
   foreach ( $attachments as $id => $attachment ) {
-    // $link = wp_get_attachment_link($id, 'full', true, false); //get hyperlink for images gallery
-    $link = wp_get_attachment_url($attachment->ID); //get src path img
+    $link = wp_get_attachment_link($id, 'full', true, false); //get hyperlink for images gallery
+    $nonlink = wp_get_attachment_url($attachment->ID); //get src path img without link
     $output .= "<div class='homepage-gallery-item'>";
     $output .= "
       <div class='homepage-gallery-icon'>        
-          <img src='$link'/>
+          <img src='$nonlink'/>
       </div>";
 
     if ( $captiontag && trim($attachment->post_excerpt) ) {
