@@ -54,4 +54,22 @@ $(document).ready(function(){
             newWindow.focus();
         }
     };
+
+    ///////////// option themes
+    $('.all_options').slideUp();
+    $('.input_title h3').click(function(){
+    if($(this).parent().next('.all_options').css('display')=='none'){    
+        $(this).removeClass('inactive');
+        $(this).addClass('active');
+        $(this).children('img').removeClass('inactive');
+        $(this).children('img').addClass('active');
+    }
+    else{
+        $(this).removeClass('active');
+        $(this).addClass('inactive');
+        $(this).children('img').removeClass('active');
+        $(this).children('img').addClass('inactive');
+    }
+    $(this).parent().next('.all_options').slideToggle('slow');
+    });
 });
